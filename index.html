@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عيادة دكتور أمير حجي</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Tahoma,sans-serif;
+}
+
+body{
+    background:#f4f7f6;
+    color:#173f38;
+}
+
+header{
+    background:#075b4d;
+    color:white;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:10;
+    box-shadow:0 3px 15px #0002;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.tooth{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+}
+
+.logo h1{
+    font-size:18px;
+}
+
+.logo p{
+    font-size:11px;
+    opacity:.8;
+}
+
+.menu{
+    font-size:26px;
+    cursor:pointer;
+}
+
+.container{
+    padding:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.welcome{
+    margin-bottom:20px;
+}
+
+.welcome h2{
+    font-size:23px;
+    margin-bottom:5px;
+}
+
+.welcome p{
+    color:#71817d;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 4px 15px #174f4312;
+}
+
+.stat{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:#e4f3ef;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+}
+
+.stat h3{
+    font-size:21px;
+    margin-bottom:4px;
+}
+
+.stat p{
+    font-size:12px;
+    color:#71817d;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:25px 0 12px;
+}
+
+.section-title h2{
+    font-size:18px;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.action{
+    background:white;
+    border:0;
+    border-radius:18px;
+    padding:20px 10px;
+    color:#16483f;
+    font-size:14px;
+    box-shadow:0 4px 15px #174f4312;
+    cursor:pointer;
+}
+
+.action span{
+    display:block;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.appointments{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.appointment{
+    background:white;
+    border-radius:16px;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 3px 12px #174f4310;
+}
+
+.patient{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#e3f0ed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.patient strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.patient small{
+    color:#788681;
+}
+
+.time{
+    color:#075b4d;
+    font-weight:bold;
+}
+
+.bottom{
+    margin-top:30px;
+    background:#075b4d;
+    color:white;
+    padding:20px;
+    text-align:center;
+    border-radius:20px 20px 0 0;
+}
+
+.bottom small{
+    opacity:.8;
+}
+
+@media(min-width:700px){
+    .stats{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .buttons{
+        grid-template-columns:repeat(4,1fr);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+    <div class="tooth">🦷</div>
+    <div>
+        <h1>عيادة دكتور أمير حجي</h1>
+        <p>طب الأسنان والتجميل</p>
+    </div>
+</div>
+
+<div class="menu">☰</div>
+
+</header>
+
+<main class="container">
+
+<div class="welcome">
+    <h2>مرحباً بك 👋</h2>
+    <p>لوحة التحكم الرئيسية للعيادة</p>
+</div>
+
+<!-- الإحصائيات -->
+
+<div class="stats">
+
+<div class="card stat">
+    <div class="icon">👥</div>
+    <div>
+        <h3>12</h3>
+        <p>مراجع اليوم</p>
+    </div>
+</div>
+
+<div class="card stat">
+    <div class="icon">📅</div>
+    <div>
+        <h3>8</h3>
+        <p>مواعيد اليوم</p>
+    </div>
+</div>
+
+<div class="card stat">
+    <div class="icon">💰</div>
+    <div>
+        <h3>350,000</h3>
+        <p>دخل اليوم</p>
+    </div>
+</div>
+
+<div class="card stat">
+    <div class="icon">💳</div>
+    <div>
+        <h3>120,000</h3>
+        <p>المبلغ المتبقي</p>
+    </div>
+</div>
+
+</div>
+
+<!-- الأقسام -->
+
+<div class="section-title">
+    <h2>الخدمات السريعة</h2>
+</div>
+
+<div class="buttons">
+
+<button class="action" onclick="alert('إضافة مراجع جديد')">
+    <span>👤</span>
+    إضافة مراجع
+</button>
+
+<button class="action" onclick="alert('فتح أرشيف المراجعين')">
+    <span>📁</span>
+    أرشيف المراجعين
+</button>
+
+<button class="action" onclick="alert('فتح المواعيد')">
+    <span>📅</span>
+    المواعيد
+</button>
+
+<button class="action" onclick="alert('فتح الحسابات')">
+    <span>💰</span>
+    الحسابات
+</button>
+
+<button class="action" onclick="alert('فتح الوصفات الطبية')">
+    <span>💊</span>
+    الوصفات الطبية
+</button>
+
+<button class="action" onclick="alert('فتح التنبيهات')">
+    <span>🔔</span>
+    التنبيهات
+</button>
+
+<button class="action" onclick="alert('فتح الإحصائيات')">
+    <span>📊</span>
+    الإحصائيات
+</button>
+
+<button class="action" onclick="alert('فتح إعدادات العيادة')">
+    <span>⚙️</span>
+    الإعدادات
+</button>
+
+</div>
+
+<!-- مواعيد اليوم -->
+
+<div class="section-title">
+    <h2>مواعيد اليوم</h2>
+</div>
+
+<div class="appointments">
+
+<div class="appointment">
+    <div class="patient">
+        <div class="avatar">👤</div>
+        <div>
+            <strong>أحمد محمد علي</strong>
+            <small>حشوة تجميلية</small>
+        </div>
+    </div>
+    <div class="time">09:00</div>
+</div>
+
+<div class="appointment">
+    <div class="patient">
+        <div class="avatar">👩</div>
+        <div>
+            <strong>سارة خالد</strong>
+            <small>تنظيف أسنان</small>
+        </div>
+    </div>
+    <div class="time">10:30</div>
+</div>
+
+<div class="appointment">
+    <div class="patient">
+        <div class="avatar">👤</div>
+        <div>
+            <strong>عمر حسين</strong>
+            <small>تقويم أسنان</small>
+        </div>
+    </div>
+    <div class="time">12:00</div>
+</div>
+
+<div class="appointment">
+    <div class="patient">
+        <div class="avatar">👤</div>
+        <div>
+            <strong>نور علي</strong>
+            <small>متابعة علاج</small>
+        </div>
+    </div>
+    <div class="time">14:00</div>
+</div>
+
+</div>
+
+</main>
+
+<div class="bottom">
+    <strong>عيادة دكتور أمير حجي</strong>
+    <br>
+    <small>نظام إدارة العيادة — تطوير إياد ايزدين</small>
+</div>
+
+</body>
+</html>
