@@ -1,1174 +1,642 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
 <title>عيادة دكتور أمير حجي | تقويم الأسنان</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
-
 :root{
-  --green:#087f5b;
-  --green2:#0b9b70;
-  --dark:#073b32;
-  --gold:#c9a227;
-  --gold2:#e5c75a;
-  --blue:#246bce;
-  --purple:#7457d9;
-  --red:#d64545;
-  --orange:#e58b26;
-  --bg:#f4f8f6;
-  --card:#ffffff;
-  --text:#17332d;
-  --muted:#70817c;
-  --border:#e3ece8;
-  --shadow:0 12px 35px rgba(7,59,50,.08);
-  --radius:22px;
+ --bg:#f5f7fb;
+ --card:#fff;
+ --text:#172033;
+ --muted:#718096;
+ --line:#e8edf5;
+ --green:#0f766e;
+ --green2:#14b8a6;
+ --blue:#2563eb;
+ --purple:#7c3aed;
+ --gold:#d99b16;
+ --pink:#db2777;
+ --orange:#ea580c;
+ --red:#dc2626;
+ --shadow:0 12px 35px rgba(15,23,42,.08);
+ --radius:22px
 }
 
-*{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ background:linear-gradient(180deg,#f8fafc,#eef4f7);
+ color:var(--text);
+ font-family:"Cairo","Tajawal",sans-serif
 }
 
-html,body{
-  margin:0;
-  padding:0;
-  min-height:100%;
-  font-family:'Cairo',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-
-button,input,select,textarea{
-  font-family:inherit;
-}
-
-button{
-  cursor:pointer;
-}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;border:0}
 
 .app{
-  min-height:100vh;
-  padding-bottom:90px;
+ max-width:1180px;
+ margin:auto;
+ padding:14px 14px 90px
 }
 
-/* ================= HEADER ================= */
-
-.header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--border);
-}
-
-.header-inner{
-  max-width:1250px;
-  margin:auto;
-  min-height:78px;
-  padding:12px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
+header{
+ background:linear-gradient(135deg,#075e54,#0f766e 50%,#14b8a6);
+ color:#fff;
+ border-radius:28px;
+ padding:20px;
+ box-shadow:var(--shadow);
+ position:sticky;
+ top:10px;
+ z-index:20
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:11px;
+ display:flex;
+ align-items:center;
+ gap:13px
 }
 
 .logo{
-  width:52px;
-  height:52px;
-  border-radius:17px;
-  background:linear-gradient(145deg,var(--green),#064e3f);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 8px 20px rgba(8,127,91,.22);
-  flex-shrink:0;
+ width:58px;
+ height:58px;
+ background:#fff;
+ border-radius:18px;
+ padding:7px;
+ box-shadow:0 8px 22px rgba(0,0,0,.15)
 }
 
-.logo svg{
-  width:39px;
-  height:39px;
+.brand h1{
+ font-size:21px;
+ margin:0;
+ font-weight:800
+}
+
+.brand p{
+ margin:2px 0 0;
+ opacity:.9;
+ font-size:12px
+}
+
+.brand-text{
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ min-width:0
 }
 
 .brand-text h1{
-  margin:0;
-  font-size:16px;
-  font-weight:800;
-  color:var(--dark);
+ margin:0;
+ font-size:21px;
+ font-weight:800
 }
 
-.brand-text p{
-  margin:1px 0 0;
-  color:var(--muted);
-  font-size:11px;
+.clinic-quote{
+ margin:4px 0 7px!important;
+ font-size:11.5px!important;
+ line-height:1.8;
+ color:rgba(255,255,255,.94);
+ font-weight:500
 }
 
-.header-actions{
-  display:flex;
-  gap:7px;
+.developer-name{
+ display:flex;
+ align-items:center;
+ gap:7px;
+ width:max-content;
+ max-width:100%;
+ padding:4px 10px;
+ border-radius:10px;
+ background:rgba(255,255,255,.14);
+ border:1px solid rgba(255,255,255,.18);
+ color:#fff;
+ font-size:11px;
+ font-weight:800
 }
 
-.icon-btn{
-  width:43px;
-  height:43px;
-  border:none;
-  border-radius:14px;
-  background:#eef7f3;
-  color:var(--green);
-  font-size:19px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.developer-name span{
+ color:#ffe7a3;
+ font-size:9.5px;
+ font-weight:600
 }
 
-.icon-btn:active{
-  transform:scale(.95);
+.nav{
+ display:flex;
+ gap:7px;
+ overflow:auto;
+ margin-top:15px;
+ padding-bottom:2px
 }
 
-/* ================= CONTENT ================= */
-
-.container{
-  width:min(1250px,100%);
-  margin:auto;
-  padding:20px 16px;
+.nav button{
+ background:rgba(255,255,255,.13);
+ color:#fff;
+ padding:9px 12px;
+ border-radius:14px;
+ white-space:nowrap;
+ font-weight:700
 }
 
-.page{
-  display:none;
-  animation:fade .18s ease;
+.nav button.active,
+.nav button:hover{
+ background:#fff;
+ color:#075e54
 }
 
-.page.active{
-  display:block;
+.page{display:none}
+.page.active{display:block}
+
+.section-title{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin:25px 3px 13px
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(5px)}
-  to{opacity:1;transform:translateY(0)}
+.section-title h2{
+ margin:0;
+ font-size:20px
 }
 
-.page-title{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:18px;
+.section-title span{
+ color:var(--muted);
+ font-size:12px
 }
 
-.page-title h2{
-  margin:0;
-  font-size:23px;
-  color:var(--dark);
-}
-
-.page-title p{
-  margin:4px 0 0;
-  font-size:12px;
-  color:var(--muted);
-}
-
-/* ================= DASHBOARD ================= */
-
-.hero{
-  background:
-    radial-gradient(circle at 85% 20%,rgba(229,199,90,.23),transparent 30%),
-    linear-gradient(135deg,#063d32,#087f5b);
-  color:#fff;
-  border-radius:28px;
-  padding:24px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 18px 40px rgba(7,59,50,.18);
-  margin-bottom:18px;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  width:190px;
-  height:190px;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:50%;
-  left:-75px;
-  bottom:-90px;
-}
-
-.hero h2{
-  margin:0;
-  font-size:22px;
-}
-
-.hero p{
-  margin:5px 0 0;
-  color:rgba(255,255,255,.77);
-  font-size:12px;
-}
-
-.hero-date{
-  margin-top:18px;
-  display:inline-flex;
-  padding:8px 13px;
-  border-radius:12px;
-  background:rgba(255,255,255,.1);
-  font-size:12px;
+.grid{
+ display:grid;
+ gap:13px
 }
 
 .stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-bottom:18px;
+ grid-template-columns:repeat(4,1fr)
 }
 
 .stat{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:17px;
-  box-shadow:var(--shadow);
-  min-width:0;
+ border-radius:22px;
+ padding:18px;
+ color:#fff;
+ box-shadow:var(--shadow);
+ min-height:118px
 }
 
-.stat-icon{
-  width:40px;
-  height:40px;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:12px;
-  font-size:18px;
+.stat .icon{font-size:25px}
+
+.stat b{
+ display:block;
+ font-size:25px;
+ margin-top:7px
 }
 
-.stat:nth-child(1) .stat-icon{background:#e4f6ef;color:var(--green)}
-.stat:nth-child(2) .stat-icon{background:#eaf1ff;color:var(--blue)}
-.stat:nth-child(3) .stat-icon{background:#fff6d9;color:#9c7a0a}
-.stat:nth-child(4) .stat-icon{background:#f0ebff;color:var(--purple)}
-
-.stat-value{
-  font-size:22px;
-  font-weight:800;
-  color:var(--dark);
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.stat span{
+ font-size:12px;
+ opacity:.92
 }
 
-.stat-label{
-  margin-top:2px;
-  color:var(--muted);
-  font-size:11px;
-}
-
-.grid2{
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:18px;
-}
+.s1{background:linear-gradient(135deg,#059669,#10b981)}
+.s2{background:linear-gradient(135deg,#2563eb,#38bdf8)}
+.s3{background:linear-gradient(135deg,#d97706,#f59e0b)}
+.s4{background:linear-gradient(135deg,#7c3aed,#a855f7)}
 
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:var(--shadow);
+ background:var(--card);
+ border:1px solid var(--line);
+ border-radius:var(--radius);
+ padding:18px;
+ box-shadow:var(--shadow)
 }
 
-.card-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-bottom:15px;
+.quick{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px
 }
 
-.card-title h3{
-  margin:0;
-  font-size:16px;
-  color:var(--dark);
+.quick button{
+ padding:15px;
+ border-radius:17px;
+ color:#fff;
+ font-weight:800;
+ box-shadow:0 8px 20px rgba(0,0,0,.08)
 }
 
-.small-link{
-  border:none;
-  background:none;
-  color:var(--green);
-  font-size:12px;
-  font-weight:700;
+.q1{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+.q2{background:linear-gradient(135deg,#2563eb,#60a5fa)}
+.q3{background:linear-gradient(135deg,#7c3aed,#a78bfa)}
+
+.row{
+ display:flex;
+ gap:10px;
+ align-items:center;
+ flex-wrap:wrap
 }
 
-/* ================= BUTTONS ================= */
+.between{justify-content:space-between}
+
+input,select,textarea{
+ width:100%;
+ border:1px solid #dce4ee;
+ background:#fbfdff;
+ border-radius:14px;
+ padding:12px 13px;
+ outline:none;
+ color:var(--text)
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+ border-color:var(--green2);
+ box-shadow:0 0 0 3px rgba(20,184,166,.1)
+}
+
+textarea{
+ min-height:105px;
+ resize:vertical
+}
+
+label{
+ display:block;
+ font-size:12px;
+ font-weight:800;
+ margin:0 0 6px;
+ color:#425066
+}
+
+.field{margin-bottom:13px}
+
+.two{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px
+}
+
+.three{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:12px
+}
 
 .btn{
-  border:none;
-  border-radius:14px;
-  min-height:44px;
-  padding:10px 15px;
-  font-weight:700;
-  font-size:13px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  transition:.15s;
+ padding:11px 15px;
+ border-radius:14px;
+ font-weight:800
 }
 
-.btn:active{
-  transform:scale(.97);
+.primary{background:var(--green);color:#fff}
+.blue{background:var(--blue);color:#fff}
+.purple{background:var(--purple);color:#fff}
+.gold{background:#f0b429;color:#fff}
+.danger{background:#fee2e2;color:#b91c1c}
+.ghost{background:#eef5f4;color:#0f766e}
+
+.choice{
+ border:2px solid #e4eaf2;
+ background:#fff;
+ color:#334155;
+ padding:11px;
+ border-radius:14px;
+ font-weight:800
 }
 
-.btn-primary{
-  background:linear-gradient(135deg,var(--green2),var(--green));
-  color:#fff;
-  box-shadow:0 8px 18px rgba(8,127,91,.18);
+.choice.selected{
+ border-color:var(--green);
+ background:#ecfdf5;
+ color:#047857
 }
 
-.btn-gold{
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  color:#fff;
+.money-row{
+ display:flex;
+ gap:8px;
+ flex-wrap:wrap
 }
 
-.btn-light{
-  background:#edf6f2;
-  color:var(--green);
+.money-row .choice{
+ flex:1;
+ min-width:110px
 }
 
-.btn-blue{
-  background:#eaf1ff;
-  color:var(--blue);
-}
-
-.btn-red{
-  background:#fff0f0;
-  color:var(--red);
-}
-
-.btn-dark{
-  background:var(--dark);
-  color:#fff;
-}
-
-.btn-full{
-  width:100%;
-}
-
-.btn-sm{
-  min-height:37px;
-  padding:7px 11px;
-  font-size:11px;
-  border-radius:11px;
-}
-
-/* ================= PATIENT LIST ================= */
-
-.search-box{
-  position:relative;
-  margin-bottom:14px;
-}
-
-.search-box input{
-  width:100%;
-  height:52px;
-  padding:0 48px 0 16px;
-  border:1px solid var(--border);
-  border-radius:17px;
-  background:#fff;
-  outline:none;
-  font-size:13px;
-  color:var(--text);
-}
-
-.search-box input:focus{
-  border-color:#8bcdb9;
-  box-shadow:0 0 0 4px rgba(8,127,91,.06);
-}
-
-.search-icon{
-  position:absolute;
-  right:17px;
-  top:50%;
-  transform:translateY(-50%);
-  color:var(--muted);
-}
-
-.patient-list{
-  display:grid;
-  gap:10px;
-}
-
-.patient-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:14px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  box-shadow:0 5px 20px rgba(7,59,50,.04);
-}
-
-.patient-main{
-  min-width:0;
-  display:flex;
-  align-items:center;
-  gap:12px;
+.patient-item{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:12px;
+ padding:14px 0;
+ border-bottom:1px solid var(--line)
 }
 
 .avatar{
-  width:48px;
-  height:48px;
-  border-radius:16px;
-  background:linear-gradient(135deg,#dff5ed,#eefaf6);
-  color:var(--green);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:18px;
-  font-weight:800;
-  flex-shrink:0;
+ width:46px;
+ height:46px;
+ border-radius:15px;
+ display:grid;
+ place-items:center;
+ color:#fff;
+ font-weight:900;
+ background:linear-gradient(135deg,#0f766e,#14b8a6)
 }
 
-.patient-name{
-  font-weight:800;
-  font-size:14px;
-  color:var(--dark);
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.patient-info{
+ flex:1
 }
 
-.patient-meta{
-  margin-top:3px;
-  color:var(--muted);
-  font-size:10px;
-}
-
-.patient-actions{
-  display:flex;
-  gap:6px;
-  flex-shrink:0;
-}
-
-/* ================= APPOINTMENTS ================= */
-
-.appointment-list{
-  display:grid;
-  gap:10px;
-}
-
-.appointment-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-right:4px solid var(--green);
-  border-radius:18px;
-  padding:15px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.appointment-date{
-  color:var(--green);
-  font-weight:800;
-  font-size:13px;
-}
-
-.appointment-time{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:3px;
-}
+.patient-info b{display:block}
+.patient-info small{color:var(--muted)}
 
 .badge{
-  display:inline-flex;
-  padding:5px 9px;
-  border-radius:9px;
-  background:#edf7f3;
-  color:var(--green);
-  font-size:10px;
-  font-weight:700;
+ display:inline-block;
+ padding:5px 9px;
+ border-radius:999px;
+ background:#eff6ff;
+ color:#2563eb;
+ font-size:11px;
+ font-weight:800
 }
 
-/* ================= FORMS ================= */
-
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:13px;
+.badge.green{
+ background:#ecfdf5;
+ color:#047857
 }
 
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+.badge.gold{
+ background:#fffbeb;
+ color:#b45309
 }
 
-.field.full{
-  grid-column:1/-1;
+.badge.pink{
+ background:#fdf2f8;
+ color:#be185d
 }
-
-.field label{
-  font-size:11px;
-  font-weight:700;
-  color:#46615a;
-}
-
-.field input,
-.field select,
-.field textarea{
-  width:100%;
-  border:1px solid var(--border);
-  border-radius:13px;
-  background:#fbfdfc;
-  min-height:45px;
-  padding:10px 12px;
-  outline:none;
-  font-size:12px;
-  color:var(--text);
-}
-
-.field textarea{
-  min-height:130px;
-  resize:vertical;
-  line-height:1.8;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-  border-color:#81c8b4;
-  box-shadow:0 0 0 4px rgba(8,127,91,.05);
-}
-
-.jaw-options{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-}
-
-.jaw-option{
-  position:relative;
-}
-
-.jaw-option input{
-  position:absolute;
-  opacity:0;
-  pointer-events:none;
-}
-
-.jaw-option label{
-  min-height:46px;
-  border:1px solid var(--border);
-  border-radius:13px;
-  background:#fbfdfc;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px;
-  text-align:center;
-  font-size:11px;
-  font-weight:700;
-  color:#58716a;
-  cursor:pointer;
-}
-
-.jaw-option input:checked + label{
-  background:#e4f6ef;
-  border-color:#71bea7;
-  color:var(--green);
-  box-shadow:0 0 0 2px rgba(8,127,91,.06);
-}
-
-/* PROCEDURE WRITING */
-
-.procedure-box{
-  border:1px solid #dfeae6;
-  background:#f8fcfa;
-  border-radius:17px;
-  padding:13px;
-}
-
-.procedure-box.hidden{
-  display:none;
-}
-
-.procedure-title{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  margin-bottom:8px;
-  font-size:12px;
-  font-weight:800;
-  color:var(--dark);
-}
-
-.procedure-title span{
-  width:28px;
-  height:28px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#e3f5ee;
-  color:var(--green);
-  border-radius:9px;
-}
-
-.procedure-box textarea{
-  background:#fff;
-}
-
-/* ================= PROFILE ================= */
-
-.profile-hero{
-  background:linear-gradient(135deg,#063d32,#087f5b);
-  color:#fff;
-  border-radius:25px;
-  padding:20px;
-  margin-bottom:14px;
-}
-
-.profile-top{
-  display:flex;
-  align-items:center;
-  gap:13px;
-}
-
-.profile-avatar{
-  width:58px;
-  height:58px;
-  border-radius:19px;
-  background:rgba(255,255,255,.13);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  font-weight:800;
-}
-
-.profile-name{
-  font-size:20px;
-  font-weight:800;
-}
-
-.profile-sub{
-  font-size:11px;
-  color:rgba(255,255,255,.75);
-  margin-top:3px;
-}
-
-.profile-actions{
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-
-.profile-actions .btn{
-  background:rgba(255,255,255,.12);
-  color:#fff;
-}
-
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:9px;
-}
-
-.info-box{
-  background:#f8fbfa;
-  border:1px solid var(--border);
-  border-radius:15px;
-  padding:12px;
-}
-
-.info-label{
-  color:var(--muted);
-  font-size:9px;
-}
-
-.info-value{
-  margin-top:3px;
-  color:var(--dark);
-  font-weight:800;
-  font-size:12px;
-}
-
-.account-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-
-.account-box{
-  padding:15px;
-  border-radius:16px;
-  background:#f8fbfa;
-}
-
-.account-box .label{
-  color:var(--muted);
-  font-size:10px;
-}
-
-.account-box .value{
-  margin-top:4px;
-  font-size:17px;
-  font-weight:800;
-}
-
-.account-box.total .value{color:var(--dark)}
-.account-box.paid .value{color:var(--green)}
-.account-box.remaining .value{color:var(--red)}
-
-.session-card{
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:15px;
-  margin-bottom:10px;
-  background:#fff;
-}
-
-.session-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:10px;
-}
-
-.session-number{
-  font-weight:800;
-  color:var(--dark);
-}
-
-.session-date{
-  font-size:10px;
-  color:var(--muted);
-  margin-top:3px;
-}
-
-.session-jaw{
-  margin-top:12px;
-  padding:8px 10px;
-  background:#f2f8f6;
-  border-radius:11px;
-  color:var(--green);
-  font-size:10px;
-  font-weight:700;
-}
-
-.session-procedure{
-  margin-top:10px;
-  display:grid;
-  gap:8px;
-}
-
-.proc-written{
-  padding:11px;
-  border-radius:12px;
-  background:#fafcfb;
-  border:1px solid #e8efec;
-  font-size:11px;
-  line-height:1.9;
-}
-
-.proc-written strong{
-  color:var(--green);
-}
-
-.session-finance{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  margin-top:11px;
-  padding-top:10px;
-  border-top:1px dashed var(--border);
-  font-size:10px;
-  color:var(--muted);
-}
-
-.session-finance b{
-  color:var(--dark);
-}
-
-/* ================= EMPTY ================= */
 
 .empty{
-  text-align:center;
-  padding:35px 15px;
-  color:var(--muted);
+ text-align:center;
+ color:var(--muted);
+ padding:35px 10px
 }
 
-.empty-icon{
-  font-size:35px;
-  margin-bottom:8px;
+.toolbar{
+ display:grid;
+ grid-template-columns:1fr auto;
+ gap:10px;
+ margin-bottom:13px
 }
 
-.empty h4{
-  margin:0;
-  color:var(--dark);
-  font-size:14px;
+.table-wrap{overflow:auto}
+
+.table{
+ width:100%;
+ border-collapse:collapse
 }
 
-.empty p{
-  margin:5px 0 0;
-  font-size:11px;
+.table th,
+.table td{
+ padding:10px;
+ border-bottom:1px solid var(--line);
+ text-align:right;
+ white-space:nowrap;
+ font-size:12px
 }
-
-/* ================= BOTTOM NAV ================= */
-
-.bottom-nav{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  z-index:60;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(16px);
-  border-top:1px solid var(--border);
-  padding:7px max(8px,env(safe-area-inset-left)) calc(7px + env(safe-area-inset-bottom));
-}
-
-.bottom-inner{
-  max-width:700px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-}
-
-.nav-item{
-  border:none;
-  background:none;
-  color:#80918c;
-  min-height:58px;
-  border-radius:14px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:2px;
-  font-size:9px;
-  font-weight:700;
-}
-
-.nav-item .nav-icon{
-  font-size:19px;
-}
-
-.nav-item.active{
-  color:var(--green);
-  background:#edf8f4;
-}
-
-/* ================= MODAL ================= */
 
 .modal{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  background:rgba(0,0,0,.48);
-  display:none;
-  align-items:flex-end;
-  justify-content:center;
-  padding:0;
+ position:fixed;
+ inset:0;
+ background:rgba(15,23,42,.55);
+ display:none;
+ align-items:flex-end;
+ justify-content:center;
+ z-index:100;
+ padding:10px
 }
 
-.modal.show{
-  display:flex;
-}
+.modal.show{display:flex}
 
 .modal-box{
-  width:min(760px,100%);
-  max-height:94vh;
-  overflow:auto;
-  background:#fff;
-  border-radius:27px 27px 0 0;
-  padding:18px;
-  animation:sheet .2s ease;
-}
-
-@keyframes sheet{
-  from{transform:translateY(100%)}
-  to{transform:translateY(0)}
+ width:min(760px,100%);
+ max-height:94vh;
+ overflow:auto;
+ background:#fff;
+ border-radius:28px;
+ padding:20px;
+ box-shadow:0 25px 70px rgba(0,0,0,.25)
 }
 
 .modal-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-bottom:18px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:14px
 }
 
-.modal-head h3{
-  margin:0;
-  font-size:17px;
-  color:var(--dark);
-}
+.modal-head h3{margin:0}
 
 .close{
-  width:38px;
-  height:38px;
-  border:none;
-  border-radius:12px;
-  background:#f1f5f3;
-  color:#51645e;
-  font-size:18px;
+ width:38px;
+ height:38px;
+ border-radius:12px;
+ background:#f1f5f9
 }
 
-.modal-footer{
-  display:flex;
-  gap:8px;
-  margin-top:18px;
+.profile-head{
+ display:flex;
+ gap:14px;
+ align-items:center
 }
 
-.modal-footer .btn{
-  flex:1;
+.profile-head .avatar{
+ width:65px;
+ height:65px;
+ font-size:20px
 }
 
-/* ================= TOAST ================= */
+.profile-grid{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:10px;
+ margin-top:15px
+}
+
+.info-box{
+ padding:12px;
+ border-radius:16px;
+ background:#f8fafc
+}
+
+.info-box small{
+ display:block;
+ color:var(--muted);
+ font-size:10px
+}
+
+.info-box b{
+ display:block;
+ margin-top:3px
+}
+
+.session{
+ border:1px solid var(--line);
+ border-radius:18px;
+ padding:14px;
+ margin-top:10px;
+ background:#fff
+}
+
+.session-top{
+ display:flex;
+ justify-content:space-between;
+ gap:10px;
+ align-items:center
+}
+
+.session-num{
+ width:38px;
+ height:38px;
+ border-radius:12px;
+ background:#ede9fe;
+ color:#6d28d9;
+ display:grid;
+ place-items:center;
+ font-weight:900
+}
+
+.procedure{
+ background:#f8fafc;
+ border-radius:15px;
+ padding:12px;
+ margin-top:10px
+}
+
+.procedure b{
+ font-size:12px;
+ color:#334155
+}
+
+.procedure p{
+ margin:5px 0 0;
+ white-space:pre-wrap;
+ font-size:13px
+}
+
+.account-card{
+ border-radius:20px;
+ padding:16px;
+ color:#fff;
+ margin-top:12px
+}
+
+.a1{
+ background:linear-gradient(135deg,#0f766e,#14b8a6)
+}
+
+.a2{
+ background:linear-gradient(135deg,#2563eb,#3b82f6)
+}
+
+.a3{
+ background:linear-gradient(135deg,#7c3aed,#a855f7)
+}
+
+.account-card .big{
+ font-size:25px;
+ font-weight:900
+}
+
+.account-card small{opacity:.9}
 
 .toast{
-  position:fixed;
-  z-index:200;
-  left:50%;
-  bottom:85px;
-  transform:translateX(-50%) translateY(20px);
-  background:#173d35;
-  color:#fff;
-  padding:11px 16px;
-  border-radius:13px;
-  font-size:11px;
-  opacity:0;
-  pointer-events:none;
-  transition:.25s;
-  max-width:90%;
-  text-align:center;
+ position:fixed;
+ bottom:22px;
+ left:50%;
+ transform:translateX(-50%) translateY(20px);
+ background:#172033;
+ color:#fff;
+ padding:12px 18px;
+ border-radius:14px;
+ opacity:0;
+ pointer-events:none;
+ transition:.25s;
+ z-index:200;
+ font-size:13px
 }
 
 .toast.show{
-  opacity:1;
-  transform:translateX(-50%) translateY(0);
+ opacity:1;
+ transform:translateX(-50%) translateY(0)
 }
 
-/* ================= MORE ================= */
-
-.menu-list{
-  display:grid;
-  gap:10px;
+footer{
+ text-align:center;
+ color:#7b8798;
+ font-size:11px;
+ margin-top:35px;
+ padding:15px
 }
 
-.menu-item{
-  width:100%;
-  border:1px solid var(--border);
-  background:#fff;
-  border-radius:17px;
-  padding:15px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-align:right;
-  color:var(--text);
+footer b{color:#0f766e}
+
+@media(max-width:800px){
+ .stats{grid-template-columns:1fr 1fr}
+ .profile-grid{grid-template-columns:1fr 1fr}
 }
 
-.menu-item-icon{
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#edf7f3;
-  color:var(--green);
-  font-size:18px;
-  flex-shrink:0;
+@media(max-width:540px){
+ .app{padding:8px 9px 80px}
+ header{border-radius:22px}
+ .two,.three{grid-template-columns:1fr}
+ .toolbar{grid-template-columns:1fr}
+ .stats{gap:9px}
+ .stat{
+  min-height:105px;
+  padding:14px
+ }
+ .stat b{font-size:21px}
+ .quick{grid-template-columns:1fr}
+ .modal{padding:0}
+ .modal-box{
+  border-radius:26px 26px 0 0;
+  max-height:96vh
+ }
+ .brand-text h1{font-size:19px}
+ .clinic-quote{
+  font-size:10px!important;
+  max-width:270px
+ }
+ .developer-name{
+  font-size:10px;
+  padding:3px 8px
+ }
+ .developer-name span{
+  font-size:8.5px
+ }
 }
-
-.menu-item strong{
-  display:block;
-  font-size:12px;
-}
-
-.menu-item small{
-  color:var(--muted);
-  font-size:9px;
-}
-
-.about{
-  margin-top:18px;
-  background:linear-gradient(135deg,#063d32,#087f5b);
-  color:#fff;
-  border-radius:23px;
-  padding:22px;
-  text-align:center;
-}
-
-.about p{
-  margin:0;
-  line-height:2;
-  font-size:12px;
-}
-
-.about .quote{
-  font-size:14px;
-  font-weight:700;
-}
-
-.about .dev{
-  margin-top:10px;
-  color:#e5c75a;
-  font-weight:800;
-  font-size:11px;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:850px){
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .grid2{
-    grid-template-columns:1fr;
-  }
-
-  .info-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:560px){
-  .container{
-    padding:16px 12px;
-  }
-
-  .header-inner{
-    padding:10px 12px;
-  }
-
-  .brand-text h1{
-    font-size:14px;
-  }
-
-  .brand-text p{
-    font-size:9px;
-  }
-
-  .logo{
-    width:46px;
-    height:46px;
-  }
-
-  .hero{
-    padding:20px;
-  }
-
-  .hero h2{
-    font-size:19px;
-  }
-
-  .stat{
-    padding:13px;
-  }
-
-  .stat-value{
-    font-size:18px;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .field.full{
-    grid-column:auto;
-  }
-
-  .jaw-options{
-    grid-template-columns:1fr 1fr 1fr;
-  }
-
-  .account-grid{
-    grid-template-columns:1fr;
-  }
-
-  .patient-card{
-    align-items:flex-start;
-  }
-
-  .patient-actions{
-    flex-direction:column;
-  }
-
-  .patient-actions .btn{
-    min-width:70px;
-  }
-
-  .page-title h2{
-    font-size:20px;
-  }
-}
-
-@media(min-width:900px){
-  .modal{
-    align-items:center;
-    padding:20px;
-  }
-
-  .modal-box{
-    border-radius:27px;
-    max-height:90vh;
-  }
-}
-
-/* PRINT */
 
 @media print{
-  body{
-    background:#fff;
-  }
+ header,.nav,.no-print,footer,.toolbar,.btn{
+  display:none!important
+ }
 
-  .header,
-  .bottom-nav,
-  .profile-actions,
-  .btn,
-  .icon-btn{
-    display:none!important;
-  }
+ body{background:#fff}
 
-  .container{
-    padding:0;
-  }
+ .app{
+  max-width:none;
+  padding:0
+ }
 
-  .page{
-    display:none!important;
-  }
+ .page{display:none!important}
+ .page.active{display:block!important}
 
-  #profilePage{
-    display:block!important;
-  }
+ .card{
+  box-shadow:none;
+  border:1px solid #ddd
+ }
 
-  .profile-hero{
-    color:#000;
-    background:#fff;
-    border:1px solid #ddd;
-    box-shadow:none;
-  }
-
-  .card,
-  .session-card{
-    box-shadow:none;
-    break-inside:avoid;
-  }
+ .modal{display:none!important}
 }
 </style>
 </head>
@@ -1177,2981 +645,2209 @@ button{
 
 <div class="app">
 
-<!-- HEADER -->
-<header class="header">
-  <div class="header-inner">
+<header>
 
-    <div class="brand">
-      <div class="logo">
-        <svg viewBox="0 0 64 64" fill="none">
-          <path d="M18 12C12 16 10 25 12 35C14 47 19 54 25 51C29 49 28 41 32 41C36 41 35 49 39 51C45 54 50 47 52 35C54 25 52 16 46 12C40 8 35 13 32 14C29 13 24 8 18 12Z"
-                fill="white"/>
-          <path d="M18 27C23 22 41 22 46 27"
-                stroke="#C9A227"
-                stroke-width="3"
-                stroke-linecap="round"/>
-          <circle cx="23" cy="27" r="3.3" fill="#087F5B"/>
-          <circle cx="32" cy="27" r="3.3" fill="#087F5B"/>
-          <circle cx="41" cy="27" r="3.3" fill="#087F5B"/>
-          <path d="M21 34C26 38 38 38 43 34"
-                stroke="#087F5B"
-                stroke-width="2.5"
-                stroke-linecap="round"/>
-        </svg>
-      </div>
+ <div class="brand">
 
-      <div class="brand-text">
-        <h1>عيادة دكتور أمير حجي</h1>
-        <p>نظام إدارة مراجعي تقويم الأسنان</p>
-      </div>
-    </div>
-
-    <div class="header-actions">
-      <button class="icon-btn" onclick="openNewPatient()" title="مراجع جديد">＋</button>
-    </div>
-
+  <div class="logo">
+   <svg viewBox="0 0 100 100" width="100%" height="100%">
+    <path d="M28 15c-9 2-15 11-14 24 1 13 6 21 8 32 2 11 5 20 11 20 7 0 7-16 17-16s10 16 17 16c6 0 9-9 11-20 2-11 7-19 8-32 1-13-5-22-14-24-8-2-14 4-22 4s-14-6-22-4z" fill="#0f766e"/>
+    <path d="M25 43h50M29 51h42" stroke="#d99b16" stroke-width="5" stroke-linecap="round"/>
+    <rect x="31" y="39" width="8" height="8" rx="2" fill="#fff"/>
+    <rect x="46" y="39" width="8" height="8" rx="2" fill="#fff"/>
+    <rect x="61" y="39" width="8" height="8" rx="2" fill="#fff"/>
+   </svg>
   </div>
+
+  <div class="brand-text">
+   <h1>عيادة دكتور أمير حجي</h1>
+
+   <p class="clinic-quote">
+    «بكل تعبٍ بُني، وبكل حبٍّ صُمّم… ليجعل عمل عيادتنا أسهل.»
+   </p>
+
+   <div class="developer-name">
+    إياد إيزدين
+    <span>مصمم ومطور البرنامج</span>
+   </div>
+  </div>
+
+ </div>
+
+ <div class="nav">
+  <button class="active" data-page="dashboard">الرئيسية</button>
+  <button data-page="patients">المراجعين</button>
+  <button data-page="appointments">المواعيد</button>
+  <button data-page="accounts">الحسابات</button>
+  <button data-page="more">المزيد</button>
+ </div>
+
 </header>
 
+<main>
 
-<main class="container">
+<section id="dashboard" class="page active">
 
-<!-- ================= HOME ================= -->
-<section id="homePage" class="page active">
+ <div class="section-title">
+  <h2>لوحة العيادة</h2>
+  <span id="todayText"></span>
+ </div>
 
-  <div class="hero">
-    <h2>مرحباً بك 👋</h2>
-    <p>إدارة مراجعي التقويم والجلسات والحسابات بطريقة سريعة ومنظمة.</p>
-    <div class="hero-date" id="todayLabel"></div>
+ <div class="grid stats">
+
+  <div class="stat s1">
+   <div class="icon">🦷</div>
+   <b id="statPatients">0</b>
+   <span>مراجع تقويم</span>
   </div>
 
-  <div class="stats">
-
-    <div class="stat">
-      <div class="stat-icon">👥</div>
-      <div class="stat-value" id="statPatients">0</div>
-      <div class="stat-label">مراجعي التقويم</div>
-    </div>
-
-    <div class="stat">
-      <div class="stat-icon">📅</div>
-      <div class="stat-value" id="statToday">0</div>
-      <div class="stat-label">مواعيد اليوم</div>
-    </div>
-
-    <div class="stat">
-      <div class="stat-icon">💰</div>
-      <div class="stat-value" id="statIncome">0</div>
-      <div class="stat-label">دخل اليوم</div>
-    </div>
-
-    <div class="stat">
-      <div class="stat-icon">🧾</div>
-      <div class="stat-value" id="statRemaining">0</div>
-      <div class="stat-label">المتبقي الكلي</div>
-    </div>
-
+  <div class="stat s2">
+   <div class="icon">📅</div>
+   <b id="statToday">0</b>
+   <span>مواعيد اليوم</span>
   </div>
 
-
-  <div class="grid2">
-
-    <div class="card">
-      <div class="card-title">
-        <h3>مراجعي اليوم</h3>
-        <button class="small-link" onclick="showPage('appointments')">كل المواعيد</button>
-      </div>
-
-      <div id="todayAppointments"></div>
-    </div>
-
-
-    <div class="card">
-      <div class="card-title">
-        <h3>إجراءات سريعة</h3>
-      </div>
-
-      <div style="display:grid;gap:9px">
-        <button class="btn btn-primary btn-full" onclick="openNewPatient()">
-          ＋ إضافة مراجع جديد
-        </button>
-
-        <button class="btn btn-light btn-full" onclick="showPage('patients')">
-          👥 فتح ملفات المراجعين
-        </button>
-
-        <button class="btn btn-blue btn-full" onclick="showPage('appointments')">
-          📅 مواعيد التقويم
-        </button>
-      </div>
-    </div>
-
+  <div class="stat s3">
+   <div class="icon">💰</div>
+   <b id="statIncome">0</b>
+   <span>دخل اليوم</span>
   </div>
+
+  <div class="stat s4">
+   <div class="icon">📊</div>
+   <b id="statRemaining">0</b>
+   <span>المتبقي الكلي</span>
+  </div>
+
+ </div>
+
+ <div class="section-title">
+  <h2>إجراءات سريعة</h2>
+ </div>
+
+ <div class="quick">
+  <button class="q1" onclick="openPatientModal()">＋ إضافة مراجع جديد</button>
+  <button class="q2" onclick="go('appointments')">📅 مواعيد اليوم</button>
+  <button class="q3" onclick="go('accounts')">💳 الحسابات</button>
+ </div>
+
+ <div class="section-title">
+  <h2>مواعيد اليوم</h2>
+  <span>تظهر تلقائياً</span>
+ </div>
+
+ <div class="card" id="todayList"></div>
+
+ <div class="section-title">
+  <h2>مواعيد باچر</h2>
+  <span>جاهزة للتذكير عبر واتساب</span>
+ </div>
+
+ <div class="card" id="tomorrowList"></div>
 
 </section>
 
 
-<!-- ================= PATIENTS ================= -->
-<section id="patientsPage" class="page">
+<section id="patients" class="page">
 
-  <div class="page-title">
-    <div>
-      <h2>مراجعو التقويم</h2>
-      <p>ابحث بالاسم أو رقم الملف أو الهاتف.</p>
-    </div>
+ <div class="section-title">
+  <h2>مراجعي التقويم</h2>
+  <button class="btn primary" onclick="openPatientModal()">＋ إضافة</button>
+ </div>
 
-    <button class="btn btn-primary" onclick="openNewPatient()">＋ جديد</button>
-  </div>
+ <div class="toolbar">
+  <input id="searchInput" placeholder="ابحث بالاسم أو رقم الملف أو الهاتف" oninput="renderPatients()">
+  <button class="btn ghost" onclick="document.getElementById('searchInput').value='';renderPatients()">مسح</button>
+ </div>
 
-
-  <div class="search-box">
-    <span class="search-icon">🔎</span>
-    <input
-      id="patientSearch"
-      type="search"
-      placeholder="ابحث عن اسم، رقم ملف، أو رقم هاتف..."
-      oninput="renderPatients()"
-    >
-  </div>
-
-  <div id="patientsList" class="patient-list"></div>
+ <div class="card" id="patientsList"></div>
 
 </section>
 
 
-<!-- ================= APPOINTMENTS ================= -->
-<section id="appointmentsPage" class="page">
+<section id="appointments" class="page">
 
-  <div class="page-title">
-    <div>
-      <h2>مواعيد التقويم</h2>
-      <p>الموعد القادم لكل مراجع.</p>
-    </div>
+ <div class="section-title">
+  <h2>المواعيد</h2>
+  <span id="apptCount"></span>
+ </div>
+
+ <div class="card">
+
+  <div class="toolbar">
+   <input type="date" id="apptDate" onchange="renderAppointments()">
+   <button class="btn ghost" onclick="setTodayAppt()">اليوم</button>
   </div>
 
-  <div class="search-box">
-    <span class="search-icon">🔎</span>
-    <input
-      id="appointmentSearch"
-      type="search"
-      placeholder="ابحث عن مراجع..."
-      oninput="renderAppointments()"
-    >
-  </div>
+  <div id="appointmentsList"></div>
 
-  <div id="appointmentsList" class="appointment-list"></div>
+ </div>
 
 </section>
 
 
-<!-- ================= ACCOUNTS ================= -->
-<section id="accountsPage" class="page">
+<section id="accounts" class="page">
 
-  <div class="page-title">
-    <div>
-      <h2>الحسابات</h2>
-      <p>المبالغ الكلية والمدفوعات والمتبقي.</p>
-    </div>
-  </div>
+ <div class="section-title">
+  <h2>الحسابات</h2>
+  <span>حساب كل مراجع</span>
+ </div>
 
-  <div class="stats">
-
-    <div class="stat">
-      <div class="stat-icon">💳</div>
-      <div class="stat-value" id="accountTotal">0</div>
-      <div class="stat-label">إجمالي الاتفاقات</div>
-    </div>
-
-    <div class="stat">
-      <div class="stat-icon">💵</div>
-      <div class="stat-value" id="accountPaid">0</div>
-      <div class="stat-label">إجمالي المدفوع</div>
-    </div>
-
-    <div class="stat">
-      <div class="stat-icon">📌</div>
-      <div class="stat-value" id="accountRemaining">0</div>
-      <div class="stat-label">إجمالي المتبقي</div>
-    </div>
-
-    <div class="stat">
-      <div class="stat-icon">🦷</div>
-      <div class="stat-value" id="accountSessions">0</div>
-      <div class="stat-label">إجمالي الجلسات</div>
-    </div>
-
-  </div>
-
-  <div id="accountsList" class="patient-list"></div>
+ <div id="accountsList"></div>
 
 </section>
 
 
-<!-- ================= PROFILE ================= -->
-<section id="profilePage" class="page">
+<section id="profile" class="page">
 
-  <div id="profileContent"></div>
+ <div class="section-title">
+  <button class="btn ghost" onclick="go('patients')">← رجوع</button>
+  <span>ملف المراجع</span>
+ </div>
+
+ <div id="profileContent"></div>
 
 </section>
 
 
-<!-- ================= MORE ================= -->
-<section id="morePage" class="page">
+<section id="more" class="page">
 
-  <div class="page-title">
-    <div>
-      <h2>المزيد</h2>
-      <p>النسخ الاحتياطي ومعلومات النظام.</p>
-    </div>
+ <div class="section-title">
+  <h2>المزيد</h2>
+ </div>
+
+ <div class="card">
+
+  <div class="row between" style="margin-bottom:12px">
+   <div>
+    <b>💾 نسخ احتياطي</b><br>
+    <small>حفظ جميع البيانات في ملف</small>
+   </div>
+   <button class="btn blue" onclick="backup()">تصدير</button>
   </div>
 
+  <div class="row between">
+   <div>
+    <b>♻️ استعادة البيانات</b><br>
+    <small>استرجاع نسخة محفوظة سابقاً</small>
+   </div>
+   <button class="btn purple" onclick="document.getElementById('restoreFile').click()">استعادة</button>
+  </div>
 
-  <div class="menu-list">
+  <input id="restoreFile" type="file" accept=".json" hidden onchange="restore(event)">
 
-    <button class="menu-item" onclick="backupData()">
-      <div class="menu-item-icon">⬇️</div>
-      <div>
-        <strong>نسخة احتياطية</strong>
-        <small>حفظ جميع بيانات العيادة في ملف</small>
-      </div>
-    </button>
+ </div>
 
+ <div class="card" style="margin-top:13px">
 
-    <button class="menu-item" onclick="document.getElementById('restoreInput').click()">
-      <div class="menu-item-icon">⬆️</div>
-      <div>
-        <strong>استعادة نسخة</strong>
-        <small>استعادة بيانات سابقة</small>
-      </div>
-    </button>
+  <h3 style="margin-top:0">عن النظام</h3>
 
-    <input
-      id="restoreInput"
-      type="file"
-      accept=".json"
-      style="display:none"
-      onchange="restoreData(event)"
-    >
+  <p style="line-height:2;font-size:14px">
+   هذا النظام مخصص لإدارة ومتابعة مراجعي تقويم الأسنان بسرعة وبأقل عدد ممكن من الخطوات.
+  </p>
 
+  <div style="background:linear-gradient(135deg,#ecfdf5,#eff6ff);padding:16px;border-radius:18px;line-height:2">
 
-    <button class="menu-item" onclick="printCurrentPatient()">
-      <div class="menu-item-icon">🖨️</div>
-      <div>
-        <strong>طباعة ملف المراجع</strong>
-        <small>تظهر عند فتح ملف مراجع</small>
-      </div>
-    </button>
+   <b>إياد إيزدين</b>
 
+   <div style="font-size:12px;color:#0f766e;font-weight:700">
+    مصمم ومطور البرنامج
+   </div>
 
-    <button class="menu-item" onclick="showSystemInfo()">
-      <div class="menu-item-icon">ℹ️</div>
-      <div>
-        <strong>عن النظام</strong>
-        <small>معلومات النظام والمطور</small>
-      </div>
-    </button>
+   <div style="margin-top:5px">
+    «بكل تعبٍ بُني، وبكل حبٍّ صُمّم… ليجعل عمل عيادتنا أسهل.»
+   </div>
 
   </div>
 
-
-  <div class="about">
-    <p class="quote">
-      «بكل تعبٍ بُني، وبكل حبٍ صُمّم…<br>
-      ليجعل عمل عيادتنا أسهل.»
-    </p>
-
-    <p class="dev">
-      تصميم وتطوير • إياد ايزدين
-    </p>
-  </div>
+ </div>
 
 </section>
 
 </main>
 
 
-<!-- ================= BOTTOM NAV ================= -->
+<footer>
+ عيادة دكتور أمير حجي 🦷 • تقويم الأسنان • تصميم وتطوير <b>إياد إيزدين</b>
+</footer>
 
-<nav class="bottom-nav">
-  <div class="bottom-inner">
-
-    <button class="nav-item active" data-page="home" onclick="showPage('home')">
-      <span class="nav-icon">⌂</span>
-      الرئيسية
-    </button>
-
-    <button class="nav-item" data-page="patients" onclick="showPage('patients')">
-      <span class="nav-icon">👥</span>
-      المراجعون
-    </button>
-
-    <button class="nav-item" data-page="appointments" onclick="showPage('appointments')">
-      <span class="nav-icon">📅</span>
-      المواعيد
-    </button>
-
-    <button class="nav-item" data-page="accounts" onclick="showPage('accounts')">
-      <span class="nav-icon">💰</span>
-      الحسابات
-    </button>
-
-    <button class="nav-item" data-page="more" onclick="showPage('more')">
-      <span class="nav-icon">☰</span>
-      المزيد
-    </button>
-
-  </div>
-</nav>
-
-
-<!-- ================= NEW PATIENT MODAL ================= -->
-
-<div id="patientModal" class="modal" onclick="closeModalOutside(event,'patientModal')">
-
-  <div class="modal-box">
-
-    <div class="modal-head">
-      <h3>إضافة مراجع تقويم</h3>
-      <button class="close" onclick="closeModal('patientModal')">×</button>
-    </div>
-
-
-    <form id="patientForm" onsubmit="savePatient(event)">
-
-      <div class="form-grid">
-
-        <div class="field full">
-          <label>اسم المراجع *</label>
-          <input id="pName" required placeholder="الاسم الكامل">
-        </div>
-
-
-        <div class="field">
-          <label>الجنس *</label>
-          <select id="pGender" required>
-            <option value="">اختر الجنس</option>
-            <option value="ذكر">ذكر</option>
-            <option value="أنثى">أنثى</option>
-          </select>
-        </div>
-
-
-        <div class="field">
-          <label>العمر</label>
-          <input id="pAge" type="number" min="1" max="100" placeholder="العمر">
-        </div>
-
-
-        <div class="field">
-          <label>رقم الهاتف</label>
-          <input id="pPhone" type="tel" placeholder="07xxxxxxxxx">
-        </div>
-
-
-        <div class="field">
-          <label>نوع الجهاز</label>
-          <select id="pAppliance">
-            <option value="تقويم ثابت معدني">تقويم ثابت معدني</option>
-            <option value="تقويم ثابت تجميلي">تقويم ثابت تجميلي</option>
-            <option value="تقويم متحرك">تقويم متحرك</option>
-            <option value="مثبت">مثبت</option>
-            <option value="أخرى">أخرى</option>
-          </select>
-        </div>
-
-
-        <div class="field full">
-          <label>الفك</label>
-
-          <div class="jaw-options">
-
-            <div class="jaw-option">
-              <input type="radio" id="pJawUpper" name="pJaw" value="الفك العلوي" checked>
-              <label for="pJawUpper">الفك العلوي</label>
-            </div>
-
-            <div class="jaw-option">
-              <input type="radio" id="pJawLower" name="pJaw" value="الفك السفلي">
-              <label for="pJawLower">الفك السفلي</label>
-            </div>
-
-            <div class="jaw-option">
-              <input type="radio" id="pJawBoth" name="pJaw" value="الفكان">
-              <label for="pJawBoth">الفكان</label>
-            </div>
-
-          </div>
-        </div>
-
-
-        <div class="field">
-          <label>تاريخ بدء التقويم</label>
-          <input id="pStartDate" type="date">
-        </div>
-
-
-        <div class="field">
-          <label>المبلغ الكلي</label>
-          <input id="pTotal" type="number" min="0" step="1000" placeholder="مثلاً 1,500,000">
-        </div>
-
-
-        <div class="field">
-          <label>الدفعة الأولى</label>
-          <input id="pInitialPayment" type="number" min="0" step="1000" placeholder="0">
-        </div>
-
-
-        <div class="field">
-          <label>طريقة الدفع</label>
-          <select id="pPaymentMethod">
-            <option value="نقدي">نقدي</option>
-            <option value="بطاقة">بطاقة</option>
-            <option value="تحويل">تحويل</option>
-          </select>
-        </div>
-
-
-        <div class="field">
-          <label>الموعد القادم</label>
-          <input id="pNextDate" type="date">
-        </div>
-
-
-        <div class="field">
-          <label>وقت الموعد</label>
-          <input id="pNextTime" type="time">
-        </div>
-
-      </div>
-
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light" onclick="closeModal('patientModal')">
-          إلغاء
-        </button>
-
-        <button type="submit" class="btn btn-primary">
-          حفظ المراجع
-        </button>
-      </div>
-
-    </form>
-
-  </div>
 </div>
 
 
-<!-- ================= SESSION MODAL ================= -->
+<!-- إضافة مراجع -->
 
-<div id="sessionModal" class="modal" onclick="closeModalOutside(event,'sessionModal')">
+<div class="modal" id="patientModal">
 
-  <div class="modal-box">
+ <div class="modal-box">
 
-    <div class="modal-head">
-      <h3 id="sessionModalTitle">تسجيل جلسة</h3>
-      <button class="close" onclick="closeModal('sessionModal')">×</button>
+  <div class="modal-head">
+   <h3>إضافة مراجع تقويم</h3>
+   <button class="close" onclick="closeModal('patientModal')">×</button>
+  </div>
+
+  <form id="patientForm" onsubmit="savePatient(event)">
+
+   <div class="two">
+
+    <div class="field">
+     <label>اسم المراجع الكامل *</label>
+     <input id="pName" required>
     </div>
 
+    <div class="field">
+     <label>رقم الهاتف</label>
+     <input id="pPhone" inputmode="tel">
+    </div>
 
-    <form id="sessionForm" onsubmit="saveSession(event)">
+   </div>
 
-      <input type="hidden" id="sessionPatientId">
+   <div class="three">
 
-      <div class="form-grid">
+    <div class="field">
+     <label>الجنس *</label>
+     <select id="pGender" required>
+      <option value="">اختر</option>
+      <option>ذكر</option>
+      <option>أنثى</option>
+     </select>
+    </div>
 
-        <div class="field">
-          <label>رقم الجلسة</label>
-          <input id="sessionNumber" readonly>
-        </div>
+    <div class="field">
+     <label>العمر</label>
+     <input id="pAge" type="number" min="1" max="100">
+    </div>
 
-        <div class="field">
-          <label>تاريخ الجلسة</label>
-          <input id="sessionDate" type="date" required oninput="updateSessionNextDate()">
-        </div>
+    <div class="field">
+     <label>رقم الملف</label>
+     <input id="pFile" placeholder="تلقائي">
+    </div>
 
-        <div class="field">
-          <label>وقت الجلسة</label>
-          <input id="sessionTime" type="time">
-        </div>
+   </div>
 
-        <div class="field">
-          <label>الفك</label>
+   <div class="field">
 
-          <div class="jaw-options">
+    <label>الفك</label>
 
-            <div class="jaw-option">
-              <input type="radio" id="sJawUpper" name="sJaw" value="الفك العلوي" onchange="updateProcedureFields()">
-              <label for="sJawUpper">العلوي</label>
-            </div>
+    <div class="row" id="pJawChoices">
 
-            <div class="jaw-option">
-              <input type="radio" id="sJawLower" name="sJaw" value="الفك السفلي" onchange="updateProcedureFields()">
-              <label for="sJawLower">السفلي</label>
-            </div>
+     <button type="button" class="choice selected" data-val="الفكان" onclick="pickChoice(this,'pJawChoices')">
+      الفكان
+     </button>
 
-            <div class="jaw-option">
-              <input type="radio" id="sJawBoth" name="sJaw" value="الفكان" onchange="updateProcedureFields()">
-              <label for="sJawBoth">الفكان</label>
-            </div>
+     <button type="button" class="choice" data-val="الفك العلوي" onclick="pickChoice(this,'pJawChoices')">
+      الفك العلوي
+     </button>
 
-          </div>
-        </div>
+     <button type="button" class="choice" data-val="الفك السفلي" onclick="pickChoice(this,'pJawChoices')">
+      الفك السفلي
+     </button>
 
+    </div>
 
-        <!-- علوي -->
+   </div>
 
-        <div id="upperProcedureBox" class="field full procedure-box">
+   <input id="pJaw" type="hidden" value="الفكان">
 
-          <div class="procedure-title">
-            <span>↑</span>
-            الفك العلوي
-          </div>
+   <div class="two">
 
-          <textarea
-            id="upperProcedure"
-            placeholder="اكتب هنا كل ما تم عمله في الفك العلوي...&#10;&#10;مثال: تم تغيير السلك من 0.12 إلى 0.14 وتفعيل السلك وتغيير المطاط."
-          ></textarea>
+    <div class="field">
+     <label>نوع الجهاز</label>
+     <input id="pAppliance" placeholder="مثال: تقويم ثابت">
+    </div>
 
-        </div>
+    <div class="field">
+     <label>تاريخ البدء</label>
+     <input id="pStart" type="date">
+    </div>
 
+   </div>
 
-        <!-- سفلي -->
+   <div class="field">
 
-        <div id="lowerProcedureBox" class="field full procedure-box hidden">
+    <label>المبلغ الكلي</label>
 
-          <div class="procedure-title">
-            <span>↓</span>
-            الفك السفلي
-          </div>
+    <div class="money-row" id="totalChoices">
 
-          <textarea
-            id="lowerProcedure"
-            placeholder="اكتب هنا كل ما تم عمله في الفك السفلي..."
-          ></textarea>
+     <button type="button" class="choice" data-val="1000000" onclick="pickMoney(this,'totalChoices','pTotal')">
+      1,000,000 د.ع
+     </button>
 
-        </div>
+     <button type="button" class="choice" data-val="800000" onclick="pickMoney(this,'totalChoices','pTotal')">
+      800,000 د.ع
+     </button>
 
+     <button type="button" class="choice" data-val="600000" onclick="pickMoney(this,'totalChoices','pTotal')">
+      600,000 د.ع
+     </button>
 
-        <div class="field">
-          <label>أجور الجلسة</label>
-          <input id="sessionCharge" type="number" min="0" step="1000" placeholder="0">
-        </div>
+    </div>
 
+   </div>
 
-        <div class="field">
-          <label>المدفوع في هذه الجلسة</label>
-          <input id="sessionPayment" type="number" min="0" step="1000" placeholder="0">
-        </div>
+   <input id="pTotal" type="hidden" required>
 
+   <div style="background:#ecfdf5;border-radius:16px;padding:12px;margin-bottom:13px;font-size:12px">
+    <b>ملاحظة:</b>
+    أول جلسة تكون قيمتها الافتراضية
+    <b>150,000 د.ع</b>
+    والدفعة تُسجل عند حفظ الجلسة الأولى.
+   </div>
 
-        <div class="field">
-          <label>طريقة الدفع</label>
-          <select id="sessionPaymentMethod">
-            <option value="نقدي">نقدي</option>
-            <option value="بطاقة">بطاقة</option>
-            <option value="تحويل">تحويل</option>
-          </select>
-        </div>
+   <div class="row" style="justify-content:flex-end">
 
+    <button type="button" class="btn ghost" onclick="closeModal('patientModal')">
+     إلغاء
+    </button>
 
-        <div class="field">
-          <label>الموعد القادم تلقائياً</label>
-          <input id="sessionNextDate" type="date">
-        </div>
+    <button class="btn primary">
+     حفظ المراجع
+    </button>
 
+   </div>
 
-        <div class="field">
-          <label>وقت الموعد القادم</label>
-          <input id="sessionNextTime" type="time">
-        </div>
+  </form>
 
-      </div>
+ </div>
 
-
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-light" onclick="closeModal('sessionModal')">
-          إلغاء
-        </button>
-
-        <button type="submit" class="btn btn-primary">
-          حفظ الجلسة
-        </button>
-
-      </div>
-
-    </form>
-
-  </div>
 </div>
 
 
-<!-- ================= PAYMENT MODAL ================= -->
+<!-- جلسة -->
 
-<div id="paymentModal" class="modal" onclick="closeModalOutside(event,'paymentModal')">
+<div class="modal" id="sessionModal">
 
-  <div class="modal-box">
+ <div class="modal-box">
 
-    <div class="modal-head">
-      <h3>إضافة دفعة</h3>
-      <button class="close" onclick="closeModal('paymentModal')">×</button>
+  <div class="modal-head">
+   <h3 id="sessionTitle">تسجيل جلسة</h3>
+   <button class="close" onclick="closeModal('sessionModal')">×</button>
+  </div>
+
+  <form onsubmit="saveSession(event)">
+
+   <input id="sPatientId" type="hidden">
+
+   <div class="two">
+
+    <div class="field">
+     <label>التاريخ</label>
+     <input id="sDate" type="date" required>
     </div>
 
+    <div class="field">
+     <label>الوقت</label>
+     <input id="sTime" type="time" required>
+    </div>
 
-    <form onsubmit="savePayment(event)">
+   </div>
 
-      <input type="hidden" id="paymentPatientId">
+   <div class="field">
 
-      <div class="form-grid">
+    <label>الفك</label>
 
-        <div class="field">
-          <label>المبلغ</label>
-          <input id="paymentAmount" type="number" min="1" step="1000" required placeholder="0">
-        </div>
+    <div class="row" id="sJawChoices">
 
-        <div class="field">
-          <label>طريقة الدفع</label>
-          <select id="paymentMethod">
-            <option value="نقدي">نقدي</option>
-            <option value="بطاقة">بطاقة</option>
-            <option value="تحويل">تحويل</option>
-          </select>
-        </div>
+     <button type="button" class="choice selected" data-val="الفكان"
+      onclick="pickChoice(this,'sJawChoices');renderProcedureFields()">
+      الفكان
+     </button>
 
-        <div class="field">
-          <label>التاريخ</label>
-          <input id="paymentDate" type="date" required>
-        </div>
+     <button type="button" class="choice" data-val="الفك العلوي"
+      onclick="pickChoice(this,'sJawChoices');renderProcedureFields()">
+      الفك العلوي
+     </button>
 
-        <div class="field">
-          <label>الوقت</label>
-          <input id="paymentTime" type="time">
-        </div>
+     <button type="button" class="choice" data-val="الفك السفلي"
+      onclick="pickChoice(this,'sJawChoices');renderProcedureFields()">
+      الفك السفلي
+     </button>
 
-      </div>
+    </div>
 
+   </div>
 
-      <div class="modal-footer">
+   <input id="sJaw" type="hidden" value="الفكان">
 
-        <button type="button" class="btn btn-light" onclick="closeModal('paymentModal')">
-          إلغاء
-        </button>
+   <div id="procedureFields"></div>
 
-        <button type="submit" class="btn btn-primary">
-          حفظ الدفعة
-        </button>
+   <div class="field">
 
-      </div>
+    <label>أجرة الجلسة</label>
 
-    </form>
+    <div class="money-row" id="chargeChoices"></div>
 
-  </div>
+   </div>
+
+   <input id="sCharge" type="number" min="0" value="150000" required>
+
+   <div class="field">
+
+    <label>المدفوع في هذه الجلسة</label>
+
+    <div class="money-row" id="payChoices"></div>
+
+   </div>
+
+   <input id="sPayment" type="number" min="0" value="150000" required>
+
+   <div class="field">
+
+    <label>الموعد القادم</label>
+
+    <div class="two">
+     <input id="sNextDate" type="date">
+     <input id="sNextTime" type="time">
+    </div>
+
+   </div>
+
+   <div class="row" style="justify-content:flex-end">
+
+    <button type="button" class="btn ghost" onclick="closeModal('sessionModal')">
+     إلغاء
+    </button>
+
+    <button class="btn primary">
+     حفظ الجلسة
+    </button>
+
+   </div>
+
+  </form>
+
+ </div>
+
 </div>
 
 
-<!-- ================= APPOINTMENT MODAL ================= -->
+<!-- دفعة -->
 
-<div id="appointmentModal" class="modal" onclick="closeModalOutside(event,'appointmentModal')">
+<div class="modal" id="paymentModal">
 
-  <div class="modal-box">
+ <div class="modal-box">
 
-    <div class="modal-head">
-      <h3>تغيير الموعد</h3>
-      <button class="close" onclick="closeModal('appointmentModal')">×</button>
+  <div class="modal-head">
+   <h3>إضافة دفعة</h3>
+   <button class="close" onclick="closeModal('paymentModal')">×</button>
+  </div>
+
+  <form onsubmit="savePayment(event)">
+
+   <input id="payPatientId" type="hidden">
+
+   <div class="field">
+
+    <label>المبلغ</label>
+
+    <div class="money-row" id="paymentChoices"></div>
+
+   </div>
+
+   <input id="payAmount" type="number" min="1" required>
+
+   <div class="two">
+
+    <div class="field">
+     <label>طريقة الدفع</label>
+
+     <select id="payMethod">
+      <option>نقداً</option>
+      <option>بطاقة</option>
+      <option>تحويل</option>
+     </select>
+
     </div>
 
+    <div class="field">
+     <label>التاريخ</label>
+     <input id="payDate" type="date" required>
+    </div>
 
-    <form onsubmit="saveAppointment(event)">
+   </div>
 
-      <input type="hidden" id="appointmentPatientId">
+   <div class="row" style="justify-content:flex-end">
 
-      <div class="form-grid">
+    <button type="button" class="btn ghost" onclick="closeModal('paymentModal')">
+     إلغاء
+    </button>
 
-        <div class="field">
-          <label>تاريخ الموعد</label>
-          <input id="appointmentDate" type="date" required>
-        </div>
+    <button class="btn primary">
+     حفظ الدفعة
+    </button>
 
-        <div class="field">
-          <label>وقت الموعد</label>
-          <input id="appointmentTime" type="time">
-        </div>
+   </div>
 
-      </div>
+  </form>
 
+ </div>
 
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-light" onclick="closeModal('appointmentModal')">
-          إلغاء
-        </button>
-
-        <button type="submit" class="btn btn-primary">
-          حفظ الموعد
-        </button>
-
-      </div>
-
-    </form>
-
-  </div>
 </div>
 
 
-<div id="toast" class="toast"></div>
+<!-- تعديل الموعد -->
+
+<div class="modal" id="appointmentModal">
+
+ <div class="modal-box">
+
+  <div class="modal-head">
+   <h3>تعديل الموعد</h3>
+   <button class="close" onclick="closeModal('appointmentModal')">×</button>
+  </div>
+
+  <form onsubmit="saveAppointment(event)">
+
+   <input id="aPatientId" type="hidden">
+
+   <div class="two">
+
+    <div class="field">
+     <label>التاريخ</label>
+     <input id="aDate" type="date" required>
+    </div>
+
+    <div class="field">
+     <label>الوقت</label>
+     <input id="aTime" type="time" required>
+    </div>
+
+   </div>
+
+   <div class="row" style="justify-content:flex-end">
+
+    <button type="button" class="btn ghost" onclick="closeModal('appointmentModal')">
+     إلغاء
+    </button>
+
+    <button class="btn primary">
+     حفظ الموعد
+    </button>
+
+   </div>
+
+  </form>
+
+ </div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
 
 <script>
 
-/* =========================================================
-   DATABASE
-========================================================= */
+const STORAGE_KEY="AMIR_HAJI_ORTHO_FINAL";
 
-const STORAGE_KEY = "AMIR_HAJI_ORTHO_V4";
-
-let db = {
-  version: 4,
-  patients: []
+let db={
+ version:1,
+ patients:[]
 };
 
-let currentPatientId = null;
+let currentPatientId=null;
 
+const $=id=>document.getElementById(id);
 
-/* =========================================================
-   HELPERS
-========================================================= */
+const todayISO=()=>new Date().toISOString().slice(0,10);
 
-function uid(prefix="id"){
-  return prefix + "_" + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+function money(n){
+ return Number(n||0).toLocaleString("en-US")+" د.ع"
 }
 
-
-function todayISO(){
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth()+1).padStart(2,"0");
-  const day = String(d.getDate()).padStart(2,"0");
-  return `${y}-${m}-${day}`;
+function esc(s){
+ return String(s??"").replace(/[&<>"']/g,m=>({
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#039;"
+ }[m]))
 }
 
-
-function timeNow(){
-  const d = new Date();
-  return `${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`;
+function norm(s){
+ return String(s||"").trim().replace(/\s+/g," ").toLowerCase()
 }
 
+function toast(msg){
+ const t=$("toast");
+ t.textContent=msg;
+ t.classList.add("show");
 
-/*
-  إضافة شهر بطريقة آمنة.
-  مثلاً:
-  31/01 → 28/02 أو 29/02
-  وليس 03/03.
-*/
-function addOneMonth(iso){
-
-  if(!iso) return "";
-
-  const d = new Date(iso + "T00:00:00");
-
-  if(isNaN(d.getTime())) return "";
-
-  const originalDay = d.getDate();
-
-  let targetMonth = d.getMonth() + 1;
-  let targetYear = d.getFullYear();
-
-  if(targetMonth > 11){
-    targetMonth = 0;
-    targetYear++;
-  }
-
-  const lastDay = new Date(
-    targetYear,
-    targetMonth + 1,
-    0
-  ).getDate();
-
-  d.setFullYear(
-    targetYear,
-    targetMonth,
-    Math.min(originalDay,lastDay)
-  );
-
-  return formatISODate(d);
+ setTimeout(()=>{
+  t.classList.remove("show")
+ },2400)
 }
-
-
-function formatISODate(d){
-
-  const y = d.getFullYear();
-  const m = String(d.getMonth()+1).padStart(2,"0");
-  const day = String(d.getDate()).padStart(2,"0");
-
-  return `${y}-${m}-${day}`;
-}
-
-
-function formatDate(iso){
-
-  if(!iso) return "—";
-
-  const d = new Date(iso + "T00:00:00");
-
-  if(isNaN(d.getTime())) return iso;
-
-  return new Intl.DateTimeFormat("ar-IQ",{
-    year:"numeric",
-    month:"long",
-    day:"numeric"
-  }).format(d);
-}
-
-
-function formatShortDate(iso){
-
-  if(!iso) return "—";
-
-  const d = new Date(iso + "T00:00:00");
-
-  if(isNaN(d.getTime())) return iso;
-
-  return new Intl.DateTimeFormat("ar-IQ",{
-    year:"numeric",
-    month:"2-digit",
-    day:"2-digit"
-  }).format(d);
-}
-
-
-function formatMoney(value){
-
-  const n = Number(value || 0);
-
-  return new Intl.NumberFormat("en-US",{
-    maximumFractionDigits:0
-  }).format(Math.round(n)) + " د.ع";
-}
-
-
-function formatNumber(value){
-
-  return new Intl.NumberFormat("en-US").format(
-    Number(value || 0)
-  );
-}
-
-
-function normalizeName(name){
-
-  return String(name || "")
-    .trim()
-    .replace(/\s+/g," ")
-    .toLowerCase();
-}
-
-
-function escapeHTML(value){
-
-  return String(value ?? "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-}
-
-
-function patientInitial(name){
-
-  const clean = String(name || "").trim();
-
-  return clean ? clean.charAt(0) : "م";
-}
-
-
-function getPatient(id){
-
-  return db.patients.find(p => p.id === id);
-}
-
-
-function getTotalPaid(patient){
-
-  return (patient.payments || []).reduce(
-    (sum,p) => sum + Number(p.amount || 0),
-    0
-  );
-}
-
-
-function getRemaining(patient){
-
-  const total = Number(patient.ortho?.total || 0);
-
-  return Math.max(0,total - getTotalPaid(patient));
-}
-
-
-function getJawLabel(jaw){
-
-  if(jaw === "الفك العلوي") return "الفك العلوي";
-  if(jaw === "الفك السفلي") return "الفك السفلي";
-  if(jaw === "الفكان") return "الفكان";
-
-  return "—";
-}
-
-
-function showToast(message){
-
-  const toast = document.getElementById("toast");
-
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  clearTimeout(window.toastTimer);
-
-  window.toastTimer = setTimeout(()=>{
-    toast.classList.remove("show");
-  },2500);
-}
-
-
-/* =========================================================
-   STORAGE
-========================================================= */
 
 function saveDB(){
-
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(db)
-  );
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(db))
 }
-
 
 function loadDB(){
 
-  try{
+ try{
 
-    const saved = localStorage.getItem(STORAGE_KEY);
+  const x=JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-    if(saved){
+  if(x&&Array.isArray(x.patients))
+   db=x;
 
-      const parsed = JSON.parse(saved);
+ }catch(e){
 
-      if(parsed && Array.isArray(parsed.patients)){
-        db = parsed;
-        return;
-      }
-
-    }
-
-
-    /*
-      محاولة قراءة بعض النسخ القديمة إن كانت موجودة.
-    */
-
-    const oldKeys = [
-      "AMIR_HAJI_ORTHO_V3",
-      "AMIR_HAJI_ORTHO_V2",
-      "AMIR_HAJI_ORTHO_WORLD_V1",
-      "AMIR_HAJI_CLINIC_V4"
-    ];
-
-    for(const key of oldKeys){
-
-      const old = localStorage.getItem(key);
-
-      if(!old) continue;
-
-      const parsed = JSON.parse(old);
-
-      if(parsed && Array.isArray(parsed.patients)){
-
-        db.patients = parsed.patients.map((p,index)=>{
-
-          const sessions = Array.isArray(p.sessions)
-            ? p.sessions
-            : [];
-
-          const payments = Array.isArray(p.payments)
-            ? p.payments
-            : [];
-
-          return {
-
-            id:p.id || uid("pat"),
-
-            file:p.file ||
-                 p.fileNumber ||
-                 String(index+1).padStart(4,"0"),
-
-            name:p.name || "",
-
-            gender:p.gender || "",
-
-            age:p.age || "",
-
-            phone:p.phone || "",
-
-            createdAt:p.createdAt || new Date().toISOString(),
-
-            ortho:{
-              jaw:p.ortho?.jaw || p.jaw || "الفك العلوي",
-              appliance:p.ortho?.appliance || "تقويم ثابت معدني",
-              startDate:p.ortho?.startDate || todayISO(),
-              total:Number(
-                p.ortho?.total ||
-                p.ortho?.agreement ||
-                0
-              )
-            },
-
-            sessions:sessions,
-
-            payments:payments,
-
-            nextAppointment:p.nextAppointment || null
-
-          };
-
-        });
-
-        saveDB();
-
-        showToast("تم تحويل البيانات القديمة للنسخة الجديدة.");
-
-        return;
-      }
-
-    }
-
-  }catch(error){
-
-    console.error(error);
-
+  db={
+   version:1,
+   patients:[]
   }
 
+ }
 
-  db = {
-    version:4,
-    patients:[]
+}
+
+function uid(){
+ return Date.now().toString(36)+Math.random().toString(36).slice(2,8)
+}
+
+function addOneMonth(dateStr){
+
+ const d=new Date(dateStr+"T12:00:00");
+
+ if(isNaN(d))
+  return todayISO();
+
+ const day=d.getDate();
+ const targetMonth=d.getMonth()+1;
+
+ const out=new Date(
+  d.getFullYear(),
+  targetMonth,
+  1
+ );
+
+ const last=new Date(
+  out.getFullYear(),
+  out.getMonth()+1,
+  0
+ ).getDate();
+
+ out.setDate(Math.min(day,last));
+
+ return out.toISOString().slice(0,10)
+}
+
+function fmtDate(s){
+
+ if(!s)return"—";
+
+ return new Date(s+"T12:00:00")
+ .toLocaleDateString("ar-IQ",{
+  year:"numeric",
+  month:"long",
+  day:"numeric"
+ })
+}
+
+function fmtShort(s){
+
+ if(!s)return"—";
+
+ return new Date(s+"T12:00:00")
+ .toLocaleDateString("ar-IQ",{
+  month:"2-digit",
+  day:"2-digit",
+  year:"numeric"
+ })
+}
+
+function dateTimeNow(){
+
+ const d=new Date();
+
+ return{
+  date:d.toISOString().slice(0,10),
+  time:d.toTimeString().slice(0,5)
+ }
+
+}
+
+function go(page,id=null){
+
+ document
+ .querySelectorAll(".page")
+ .forEach(p=>p.classList.remove("active"));
+
+ const target=$(page);
+
+ if(target)
+  target.classList.add("active");
+
+ document
+ .querySelectorAll(".nav button")
+ .forEach(b=>{
+  b.classList.toggle(
+   "active",
+   b.dataset.page===page
+  )
+ });
+
+ if(page==="profile"&&id)
+  openProfile(id);
+
+ renderAll();
+
+ window.scrollTo({
+  top:0,
+  behavior:"smooth"
+ });
+
+}
+
+document
+ .querySelectorAll(".nav button")
+ .forEach(b=>{
+  b.onclick=()=>go(b.dataset.page)
+ });
+
+
+function openModal(id){
+ $(id).classList.add("show")
+}
+
+function closeModal(id){
+ $(id).classList.remove("show")
+}
+
+document
+ .querySelectorAll(".modal")
+ .forEach(m=>{
+  m.addEventListener("click",e=>{
+   if(e.target===m)
+    m.classList.remove("show")
+  })
+ });
+
+
+function pickChoice(btn,group){
+
+ $(group)
+ .querySelectorAll(".choice")
+ .forEach(x=>x.classList.remove("selected"));
+
+ btn.classList.add("selected");
+
+ const hidden=
+  group==="pJawChoices"
+   ?"pJaw"
+   :"sJaw";
+
+ $(hidden).value=btn.dataset.val;
+
+}
+
+
+function pickMoney(btn,group,target){
+
+ $(group)
+ .querySelectorAll(".choice")
+ .forEach(x=>x.classList.remove("selected"));
+
+ btn.classList.add("selected");
+
+ $(target).value=btn.dataset.val;
+
+}
+
+
+function moneyButtons(group,target,vals){
+
+ const el=$(group);
+
+ el.innerHTML="";
+
+ vals.forEach((v,i)=>{
+
+  const b=document.createElement("button");
+
+  b.type="button";
+  b.className="choice";
+  b.textContent=money(v);
+  b.dataset.val=v;
+
+  b.onclick=()=>{
+   pickMoney(b,group,target)
   };
 
-  saveDB();
+  if(i===0)
+   b.classList.add("selected");
+
+  el.appendChild(b);
+
+ });
+
 }
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+function openPatientModal(){
 
-function showPage(page){
+ $("patientForm").reset();
 
-  document.querySelectorAll(".page").forEach(el=>{
-    el.classList.remove("active");
-  });
+ $("pStart").value=todayISO();
 
+ $("pFile").value=nextFile();
 
-  const target = document.getElementById(page + "Page");
+ $("pJaw").value="الفكان";
 
-  if(target){
-    target.classList.add("active");
-  }
+ document
+ .querySelectorAll("#pJawChoices .choice")
+ .forEach((b,i)=>{
+  b.classList.toggle("selected",i===0)
+ });
 
+ $("pTotal").value="";
 
-  document.querySelectorAll(".nav-item").forEach(btn=>{
-    btn.classList.toggle(
-      "active",
-      btn.dataset.page === page
-    );
-  });
+ document
+ .querySelectorAll("#totalChoices .choice")
+ .forEach(b=>b.classList.remove("selected"));
 
+ openModal("patientModal");
 
-  if(page === "home") renderDashboard();
-  if(page === "patients") renderPatients();
-  if(page === "appointments") renderAppointments();
-  if(page === "accounts") renderAccounts();
-  if(page === "profile") renderProfile();
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
 }
 
 
-/* =========================================================
-   DASHBOARD
-========================================================= */
+function nextFile(){
 
-function renderDashboard(){
+ return String(
+  Math.max(
+   0,
+   ...db.patients.map(p=>Number(p.file)||0)
+  )+1
+ )
 
-  const patients = db.patients;
-
-  const today = todayISO();
-
-  const todayAppointments = patients.filter(
-    p => p.nextAppointment?.date === today
-  );
-
-
-  let todayIncome = 0;
-
-  patients.forEach(p=>{
-
-    (p.payments || []).forEach(pay=>{
-
-      if(pay.date === today){
-        todayIncome += Number(pay.amount || 0);
-      }
-
-    });
-
-  });
-
-
-  const remaining = patients.reduce(
-    (sum,p)=>sum + getRemaining(p),
-    0
-  );
-
-
-  document.getElementById("statPatients").textContent =
-    formatNumber(patients.length);
-
-  document.getElementById("statToday").textContent =
-    formatNumber(todayAppointments.length);
-
-  document.getElementById("statIncome").textContent =
-    formatMoney(todayIncome);
-
-  document.getElementById("statRemaining").textContent =
-    formatMoney(remaining);
-
-
-  document.getElementById("todayLabel").textContent =
-    formatDate(today);
-
-
-  renderTodayAppointments();
 }
 
 
-function renderTodayAppointments(){
+function savePatient(e){
 
-  const container = document.getElementById("todayAppointments");
+ e.preventDefault();
 
-  const today = todayISO();
+ const name=$("pName").value.trim();
+ const gender=$("pGender").value;
 
-  const list = db.patients
-    .filter(p=>p.nextAppointment?.date === today)
-    .sort((a,b)=>
-      String(a.nextAppointment?.time || "")
-      .localeCompare(
-        String(b.nextAppointment?.time || "")
-      )
-    );
+ const duplicate=db.patients.find(
+  p=>
+   norm(p.name)===norm(name)&&
+   p.gender===gender
+ );
 
-
-  if(!list.length){
-
-    container.innerHTML = `
-      <div class="empty">
-        <div class="empty-icon">📅</div>
-        <h4>لا توجد مواعيد اليوم</h4>
-        <p>ستظهر هنا مراجعات اليوم تلقائياً.</p>
-      </div>
-    `;
-
-    return;
-  }
-
-
-  container.innerHTML = list.map(p=>`
-
-    <div class="appointment-card">
-
-      <div>
-        <div style="font-weight:800;font-size:13px">
-          ${escapeHTML(p.name)}
-        </div>
-
-        <div class="appointment-time">
-          ${p.nextAppointment?.time || "بدون وقت"}
-        </div>
-
-        <div style="margin-top:6px">
-          <span class="badge">
-            الجلسة ${formatNumber((p.sessions?.length || 0)+1)}
-          </span>
-        </div>
-      </div>
-
-      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">
-
-        <button
-          class="btn btn-light btn-sm"
-          onclick="openPatient('${p.id}')"
-        >
-          الملف
-        </button>
-
-        <button
-          class="btn btn-primary btn-sm"
-          onclick="openSession('${p.id}')"
-        >
-          تسجيل الجلسة
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-}
-
-
-/* =========================================================
-   PATIENTS
-========================================================= */
-
-function renderPatients(){
-
-  const container = document.getElementById("patientsList");
-
-  const input = document.getElementById("patientSearch");
-
-  const query = normalizeName(input?.value || "");
-
-
-  let list = [...db.patients];
-
-
-  if(query){
-
-    list = list.filter(p=>{
-
-      return (
-        normalizeName(p.name).includes(query) ||
-        normalizeName(p.file).includes(query) ||
-        normalizeName(p.phone).includes(query)
-      );
-
-    });
-
-  }
-
-
-  list.sort((a,b)=>
-    String(a.name).localeCompare(
-      String(b.name),
-      "ar"
-    )
-  );
-
-
-  if(!list.length){
-
-    container.innerHTML = `
-      <div class="card">
-        <div class="empty">
-          <div class="empty-icon">🦷</div>
-          <h4>${query ? "لم يتم العثور على المراجع" : "لا توجد ملفات بعد"}</h4>
-          <p>${query ? "جرّب الاسم أو رقم الملف أو الهاتف." : "أضف أول مراجع تقويم للعيادة."}</p>
-        </div>
-      </div>
-    `;
-
-    return;
-  }
-
-
-  container.innerHTML = list.map(p=>`
-
-    <div class="patient-card">
-
-      <div class="patient-main">
-
-        <div class="avatar">
-          ${escapeHTML(patientInitial(p.name))}
-        </div>
-
-        <div style="min-width:0">
-
-          <div class="patient-name">
-            ${escapeHTML(p.name)}
-          </div>
-
-          <div class="patient-meta">
-            ملف ${escapeHTML(p.file)}
-            • ${escapeHTML(p.gender || "—")}
-            ${p.age ? `• ${escapeHTML(p.age)} سنة` : ""}
-          </div>
-
-          <div class="patient-meta">
-            ${escapeHTML(getJawLabel(p.ortho?.jaw))}
-            • جلسة ${formatNumber(p.sessions?.length || 0)}
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="patient-actions">
-
-        <button
-          class="btn btn-light btn-sm"
-          onclick="openPatient('${p.id}')"
-        >
-          فتح
-        </button>
-
-        <button
-          class="btn btn-primary btn-sm"
-          onclick="openSession('${p.id}')"
-        >
-          ＋ جلسة
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-}
-
-
-/* =========================================================
-   APPOINTMENTS
-========================================================= */
-
-function renderAppointments(){
-
-  const container = document.getElementById("appointmentsList");
-
-  const query = normalizeName(
-    document.getElementById("appointmentSearch")?.value || ""
-  );
-
-
-  let list = db.patients
-    .filter(p=>p.nextAppointment?.date);
-
-
-  if(query){
-
-    list = list.filter(p=>
-      normalizeName(p.name).includes(query) ||
-      normalizeName(p.file).includes(query) ||
-      normalizeName(p.phone).includes(query)
-    );
-
-  }
-
-
-  list.sort((a,b)=>{
-
-    const ad = `${a.nextAppointment.date} ${a.nextAppointment.time || ""}`;
-    const bd = `${b.nextAppointment.date} ${b.nextAppointment.time || ""}`;
-
-    return ad.localeCompare(bd);
-
-  });
-
-
-  if(!list.length){
-
-    container.innerHTML = `
-      <div class="card">
-        <div class="empty">
-          <div class="empty-icon">📅</div>
-          <h4>لا توجد مواعيد</h4>
-          <p>ستظهر المواعيد هنا تلقائياً بعد إضافة المراجعين.</p>
-        </div>
-      </div>
-    `;
-
-    return;
-  }
-
-
-  container.innerHTML = list.map(p=>{
-
-    const ap = p.nextAppointment;
-
-    const isToday = ap.date === todayISO();
-
-    const isPast = ap.date < todayISO();
-
-
-    return `
-
-      <div class="appointment-card"
-           style="${isPast ? 'opacity:.65' : ''}">
-
-        <div>
-
-          <div style="font-weight:800;font-size:13px">
-            ${escapeHTML(p.name)}
-          </div>
-
-          <div class="appointment-date">
-            ${formatShortDate(ap.date)}
-          </div>
-
-          <div class="appointment-time">
-            ${ap.time || "بدون وقت"}
-            • الجلسة ${formatNumber(ap.sessionNumber || ((p.sessions?.length || 0)+1))}
-          </div>
-
-          <div style="margin-top:7px">
-
-            <span class="badge">
-              ${isToday ? "موعد اليوم" : isPast ? "موعد سابق" : "موعد قادم"}
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">
-
-          <button
-            class="btn btn-light btn-sm"
-            onclick="openPatient('${p.id}')"
-          >
-            الملف
-          </button>
-
-          <button
-            class="btn btn-blue btn-sm"
-            onclick="openAppointment('${p.id}')"
-          >
-            تغيير
-          </button>
-
-          <button
-            class="btn btn-primary btn-sm"
-            onclick="openSession('${p.id}')"
-          >
-            جلسة
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
-
-  }).join("");
-}
-
-
-/* =========================================================
-   ACCOUNTS
-========================================================= */
-
-function renderAccounts(){
-
-  let total = 0;
-  let paid = 0;
-  let sessions = 0;
-
-
-  db.patients.forEach(p=>{
-
-    total += Number(p.ortho?.total || 0);
-    paid += getTotalPaid(p);
-    sessions += p.sessions?.length || 0;
-
-  });
-
-
-  document.getElementById("accountTotal").textContent =
-    formatMoney(total);
-
-  document.getElementById("accountPaid").textContent =
-    formatMoney(paid);
-
-  document.getElementById("accountRemaining").textContent =
-    formatMoney(Math.max(0,total-paid));
-
-  document.getElementById("accountSessions").textContent =
-    formatNumber(sessions);
-
-
-  const container = document.getElementById("accountsList");
-
-
-  const list = [...db.patients]
-    .sort((a,b)=>getRemaining(b)-getRemaining(a));
-
-
-  if(!list.length){
-
-    container.innerHTML = `
-      <div class="card">
-        <div class="empty">
-          <div class="empty-icon">💰</div>
-          <h4>لا توجد حسابات</h4>
-        </div>
-      </div>
-    `;
-
-    return;
-  }
-
-
-  container.innerHTML = list.map(p=>`
-
-    <div class="patient-card">
-
-      <div class="patient-main">
-
-        <div class="avatar">
-          ${escapeHTML(patientInitial(p.name))}
-        </div>
-
-        <div style="min-width:0">
-
-          <div class="patient-name">
-            ${escapeHTML(p.name)}
-          </div>
-
-          <div class="patient-meta">
-            الإجمالي: ${formatMoney(p.ortho?.total || 0)}
-          </div>
-
-          <div class="patient-meta">
-            المدفوع: ${formatMoney(getTotalPaid(p))}
-            • المتبقي: ${formatMoney(getRemaining(p))}
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="patient-actions">
-
-        <button
-          class="btn btn-light btn-sm"
-          onclick="openPayment('${p.id}')"
-        >
-          ＋ دفعة
-        </button>
-
-        <button
-          class="btn btn-primary btn-sm"
-          onclick="openPatient('${p.id}')"
-        >
-          الملف
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-}
-
-
-/* =========================================================
-   NEW PATIENT
-========================================================= */
-
-function openNewPatient(){
-
-  document.getElementById("patientForm").reset();
-
-
-  document.getElementById("pStartDate").value =
-    todayISO();
-
-
-  document.getElementById("pNextDate").value =
-    addOneMonth(todayISO());
-
-
-  document.getElementById("pNextTime").value =
-    "17:00";
-
-
-  document.getElementById("pJawUpper").checked = true;
-
-
-  openModal("patientModal");
-}
-
-
-function savePatient(event){
-
-  event.preventDefault();
-
-
-  const name = document.getElementById("pName").value.trim();
-
-  const gender = document.getElementById("pGender").value;
-
-  const age = document.getElementById("pAge").value;
-
-  const phone = document.getElementById("pPhone").value.trim();
-
-  const jaw = document.querySelector(
-    'input[name="pJaw"]:checked'
-  )?.value || "الفك العلوي";
-
-  const appliance =
-    document.getElementById("pAppliance").value;
-
-  const startDate =
-    document.getElementById("pStartDate").value || todayISO();
-
-  const total =
-    Number(document.getElementById("pTotal").value || 0);
-
-  const initialPayment =
-    Number(document.getElementById("pInitialPayment").value || 0);
-
-  const paymentMethod =
-    document.getElementById("pPaymentMethod").value;
-
-  const nextDate =
-    document.getElementById("pNextDate").value ||
-    addOneMonth(startDate);
-
-  const nextTime =
-    document.getElementById("pNextTime").value || "17:00";
-
-
-  if(!name || !gender){
-
-    showToast("أدخل اسم المراجع والجنس.");
-
-    return;
-  }
-
-
-  /* DUPLICATE */
-
-  const normalized = normalizeName(name);
-
-  const duplicate = db.patients.find(p=>
-    normalizeName(p.name) === normalized &&
-    p.gender === gender
-  );
-
-
-  if(duplicate){
-
-    closeModal("patientModal");
-
-    showToast("المراجع موجود مسبقاً، تم فتح ملفه.");
-
-    openPatient(duplicate.id);
-
-    return;
-  }
-
-
-  const patient = {
-
-    id:uid("pat"),
-
-    file:String(
-      db.patients.length + 1
-    ).padStart(4,"0"),
-
-    name:name,
-
-    gender:gender,
-
-    age:age,
-
-    phone:phone,
-
-    createdAt:new Date().toISOString(),
-
-    ortho:{
-      jaw:jaw,
-      appliance:appliance,
-      startDate:startDate,
-      total:total
-    },
-
-    sessions:[],
-
-    payments:[],
-
-    nextAppointment:{
-      date:nextDate,
-      time:nextTime,
-      sessionNumber:1
-    }
-
-  };
-
-
-  if(initialPayment > 0){
-
-    patient.payments.push({
-
-      id:uid("pay"),
-
-      amount:initialPayment,
-
-      date:todayISO(),
-
-      time:timeNow(),
-
-      method:paymentMethod,
-
-      type:"دفعة أولى"
-
-    });
-
-  }
-
-
-  db.patients.push(patient);
-
-  saveDB();
+ if(duplicate){
 
   closeModal("patientModal");
 
-  showToast("تم إنشاء ملف المراجع بنجاح.");
+  toast("هذا المراجع موجود، تم فتح ملفه");
 
-  openPatient(patient.id);
+  go("profile",duplicate.id);
 
-  renderAll();
+  return;
+ }
 
-}
+ const start=$("pStart").value||todayISO();
 
+ const total=Number($("pTotal").value||0);
 
-/* =========================================================
-   PATIENT PROFILE
-========================================================= */
+ if(!total){
 
-function openPatient(id){
+  toast("اختر المبلغ الكلي");
 
-  currentPatientId = id;
+  return;
+ }
 
-  renderProfile();
+ const p={
 
-  showPage("profile");
-}
+  id:uid(),
 
+  file:$("pFile").value.trim()||nextFile(),
 
-function renderProfile(){
+  name,
 
-  const container = document.getElementById("profileContent");
+  gender,
 
-  const p = getPatient(currentPatientId);
+  age:$("pAge").value,
 
+  phone:$("pPhone").value.trim(),
 
-  if(!p){
+  createdAt:new Date().toISOString(),
 
-    container.innerHTML = `
-      <div class="card">
-        <div class="empty">
-          <h4>لم يتم العثور على الملف</h4>
-        </div>
-      </div>
-    `;
+  ortho:{
+   jaw:$("pJaw").value,
+   appliance:$("pAppliance").value.trim(),
+   startDate:start,
+   total
+  },
 
-    return;
+  sessions:[],
+
+  payments:[],
+
+  nextAppointment:{
+   date:addOneMonth(start),
+   time:"17:00",
+   sessionNumber:1
   }
 
+ };
 
-  const sessions = [...(p.sessions || [])]
-    .sort((a,b)=>Number(b.number)-Number(a.number));
+ db.patients.push(p);
 
+ saveDB();
 
-  const payments = [...(p.payments || [])]
-    .sort((a,b)=>{
+ closeModal("patientModal");
 
-      const ad = `${a.date} ${a.time || ""}`;
-      const bd = `${b.date} ${b.time || ""}`;
+ toast("تم حفظ المراجع بنجاح");
 
-      return bd.localeCompare(ad);
+ go("profile",p.id);
 
-    });
+}
 
 
-  const next = p.nextAppointment;
+function openSessionModal(id){
 
+ const p=db.patients.find(x=>x.id===id);
 
-  container.innerHTML = `
+ if(!p)return;
 
-    <div class="profile-hero">
+ $("sPatientId").value=id;
 
-      <div class="profile-top">
+ const dt=dateTimeNow();
 
-        <div class="profile-avatar">
-          ${escapeHTML(patientInitial(p.name))}
-        </div>
+ const first=p.sessions.length===0;
 
-        <div>
+ $("sDate").value=dt.date;
+ $("sTime").value=dt.time;
 
-          <div class="profile-name">
-            ${escapeHTML(p.name)}
-          </div>
+ $("sJaw").value=p.ortho.jaw||"الفكان";
 
-          <div class="profile-sub">
-            ملف رقم ${escapeHTML(p.file)}
-            • ${escapeHTML(p.gender)}
-            ${p.age ? `• ${escapeHTML(p.age)} سنة` : ""}
-          </div>
+ document
+ .querySelectorAll("#sJawChoices .choice")
+ .forEach(b=>{
+  b.classList.toggle(
+   "selected",
+   b.dataset.val===$("sJaw").value
+  )
+ });
 
-        </div>
+ $("sCharge").value=first?150000:50000;
 
-      </div>
+ $("sPayment").value=first?150000:0;
 
+ $("sNextDate").value=addOneMonth(dt.date);
 
-      <div class="profile-actions">
+ $("sNextTime").value=
+  p.nextAppointment?.time||"17:00";
 
-        <button
-          class="btn"
-          onclick="openSession('${p.id}')"
-        >
-          ＋ تسجيل جلسة
-        </button>
+ $("sessionTitle").textContent=
+  `الجلسة رقم ${p.sessions.length+1} — ${p.name}`;
 
-        <button
-          class="btn"
-          onclick="openPayment('${p.id}')"
-        >
-          💰 إضافة دفعة
-        </button>
+ moneyButtons(
+  "chargeChoices",
+  "sCharge",
+  first
+   ?[150000,50000,25000,15000]
+   :[50000,25000,15000]
+ );
 
-        <button
-          class="btn"
-          onclick="openAppointment('${p.id}')"
-        >
-          📅 تغيير الموعد
-        </button>
+ moneyButtons(
+  "payChoices",
+  "sPayment",
+  first
+   ?[150000,50000,25000,15000]
+   :[50000,25000,15000]
+ );
 
-        ${p.phone ? `
-          <button
-            class="btn"
-            onclick="callPatient('${escapeHTML(p.phone)}')"
-          >
-            ☎️ اتصال
-          </button>
-        ` : ""}
+ if(!first)
+  $("sPayment").value=0;
 
-        <button
-          class="btn"
-          onclick="printPatient('${p.id}')"
-        >
-          🖨️ طباعة
-        </button>
+ renderProcedureFields();
 
-      </div>
+ openModal("sessionModal");
 
-    </div>
+}
 
 
-    <div class="card" style="margin-bottom:14px">
+function renderProcedureFields(){
 
-      <div class="card-title">
-        <h3>معلومات المراجع</h3>
-      </div>
+ const jaw=$("sJaw").value;
 
+ const box=$("procedureFields");
 
-      <div class="info-grid">
+ box.innerHTML="";
 
-        <div class="info-box">
-          <div class="info-label">الفك</div>
-          <div class="info-value">
-            ${escapeHTML(p.ortho?.jaw || "—")}
-          </div>
-        </div>
+ if(
+  jaw==="الفك العلوي"||
+  jaw==="الفكان"
+ ){
 
-        <div class="info-box">
-          <div class="info-label">نوع الجهاز</div>
-          <div class="info-value">
-            ${escapeHTML(p.ortho?.appliance || "—")}
-          </div>
-        </div>
+  box.innerHTML+=`
 
-        <div class="info-box">
-          <div class="info-label">بداية التقويم</div>
-          <div class="info-value">
-            ${formatShortDate(p.ortho?.startDate)}
-          </div>
-        </div>
-
-        <div class="info-box">
-          <div class="info-label">الهاتف</div>
-          <div class="info-value">
-            ${escapeHTML(p.phone || "—")}
-          </div>
-        </div>
+   <div class="field">
 
-      </div>
+    <label>
+     الفك العلوي — ما تم عمله
+    </label>
 
-    </div>
-
-
-    <div class="card" style="margin-bottom:14px">
-
-      <div class="card-title">
-
-        <h3>الموعد القادم</h3>
-
-        <button
-          class="small-link"
-          onclick="openAppointment('${p.id}')"
-        >
-          تغيير
-        </button>
-
-      </div>
-
-
-      ${
-        next
-        ?
-        `
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-
-            <div>
-
-              <div style="font-weight:800;color:var(--dark);font-size:15px">
-                ${formatDate(next.date)}
-              </div>
-
-              <div style="font-size:11px;color:var(--muted);margin-top:4px">
-                ${next.time || "بدون وقت"}
-                • الجلسة ${formatNumber(next.sessionNumber || ((p.sessions?.length || 0)+1))}
-              </div>
-
-            </div>
-
-            ${
-              next.date === todayISO()
-              ?
-              `<span class="badge">موعد اليوم</span>`
-              :
-              ""
-            }
-
-          </div>
-        `
-        :
-        `
-          <div class="empty" style="padding:15px">
-            <p>لا يوجد موعد محدد.</p>
-          </div>
-        `
-      }
-
-    </div>
-
-
-    <div class="card" style="margin-bottom:14px">
-
-      <div class="card-title">
-        <h3>الحساب</h3>
-      </div>
-
-
-      <div class="account-grid">
-
-        <div class="account-box total">
-          <div class="label">الإجمالي</div>
-          <div class="value">
-            ${formatMoney(p.ortho?.total || 0)}
-          </div>
-        </div>
-
-        <div class="account-box paid">
-          <div class="label">المدفوع</div>
-          <div class="value">
-            ${formatMoney(getTotalPaid(p))}
-          </div>
-        </div>
-
-        <div class="account-box remaining">
-          <div class="label">المتبقي</div>
-          <div class="value">
-            ${formatMoney(getRemaining(p))}
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="card" style="margin-bottom:14px">
-
-      <div class="card-title">
-        <h3>سجل الجلسات</h3>
-
-        <span class="badge">
-          ${formatNumber(sessions.length)} جلسة
-        </span>
-      </div>
-
-
-      ${
-        sessions.length
-        ?
-        sessions.map(renderSessionCard).join("")
-        :
-        `
-          <div class="empty">
-            <div class="empty-icon">🦷</div>
-            <h4>لا توجد جلسات بعد</h4>
-            <p>اضغط «تسجيل جلسة» لإضافة أول جلسة.</p>
-          </div>
-        `
-      }
-
-    </div>
-
-
-    <div class="card" style="margin-bottom:14px">
-
-      <div class="card-title">
-        <h3>سجل الدفعات</h3>
-
-        <button
-          class="small-link"
-          onclick="openPayment('${p.id}')"
-        >
-          ＋ دفعة
-        </button>
-      </div>
-
-
-      ${
-        payments.length
-        ?
-        payments.map(pay=>`
-
-          <div style="
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            gap:10px;
-            padding:11px 0;
-            border-bottom:1px solid var(--border);
-          ">
-
-            <div>
-
-              <div style="font-weight:800;font-size:12px">
-                ${formatMoney(pay.amount)}
-              </div>
-
-              <div style="font-size:9px;color:var(--muted);margin-top:3px">
-                ${formatShortDate(pay.date)}
-                ${pay.time ? " • " + escapeHTML(pay.time) : ""}
-                • ${escapeHTML(pay.method || "نقدي")}
-              </div>
-
-            </div>
-
-            <span class="badge">
-              ${escapeHTML(pay.type || "دفعة")}
-            </span>
-
-          </div>
-
-        `).join("")
-        :
-        `
-          <div class="empty" style="padding:20px">
-            <p>لا توجد دفعات.</p>
-          </div>
-        `
-      }
-
-    </div>
-
-
-    <div class="card">
-
-      <button
-        class="btn btn-red btn-full"
-        onclick="deletePatient('${p.id}')"
-      >
-        🗑️ حذف ملف المراجع
-      </button>
-
-    </div>
+    <textarea
+     id="sUpper"
+     placeholder="اكتب تفاصيل ما تم عمله في الفك العلوي..."
+    ></textarea>
+
+   </div>
 
   `;
-}
 
+ }
 
-function renderSessionCard(session){
+ if(
+  jaw==="الفك السفلي"||
+  jaw==="الفكان"
+ ){
 
-  return `
+  box.innerHTML+=`
 
-    <div class="session-card">
+   <div class="field">
 
-      <div class="session-head">
+    <label>
+     الفك السفلي — ما تم عمله
+    </label>
 
-        <div>
+    <textarea
+     id="sLower"
+     placeholder="اكتب تفاصيل ما تم عمله في الفك السفلي..."
+    ></textarea>
 
-          <div class="session-number">
-            الجلسة ${formatNumber(session.number)}
-          </div>
-
-          <div class="session-date">
-            ${formatShortDate(session.date)}
-            ${session.time ? " • " + escapeHTML(session.time) : ""}
-          </div>
-
-        </div>
-
-        <span class="badge">
-          ${escapeHTML(getJawLabel(session.jaw))}
-        </span>
-
-      </div>
-
-
-      <div class="session-procedure">
-
-        ${
-          session.upperProcedure
-          ?
-          `
-            <div class="proc-written">
-              <strong>الفك العلوي:</strong><br>
-              ${escapeHTML(session.upperProcedure).replace(/\n/g,"<br>")}
-            </div>
-          `
-          :
-          ""
-        }
-
-
-        ${
-          session.lowerProcedure
-          ?
-          `
-            <div class="proc-written">
-              <strong>الفك السفلي:</strong><br>
-              ${escapeHTML(session.lowerProcedure).replace(/\n/g,"<br>")}
-            </div>
-          `
-          :
-          ""
-        }
-
-      </div>
-
-
-      <div class="session-finance">
-
-        <span>
-          أجور الجلسة:
-          <b>${formatMoney(session.charge)}</b>
-        </span>
-
-        <span>
-          المدفوع:
-          <b>${formatMoney(session.payment)}</b>
-        </span>
-
-      </div>
-
-    </div>
+   </div>
 
   `;
-}
 
-
-/* =========================================================
-   SESSION
-========================================================= */
-
-function openSession(patientId){
-
-  const p = getPatient(patientId);
-
-  if(!p) return;
-
-
-  document.getElementById("sessionPatientId").value =
-    patientId;
-
-  document.getElementById("sessionModalTitle").textContent =
-    "تسجيل جلسة • " + p.name;
-
-
-  const number = (p.sessions?.length || 0) + 1;
-
-  document.getElementById("sessionNumber").value =
-    number;
-
-
-  const date = todayISO();
-
-  document.getElementById("sessionDate").value =
-    date;
-
-  document.getElementById("sessionTime").value =
-    timeNow();
-
-
-  document.getElementById("sessionCharge").value =
-    "";
-
-  document.getElementById("sessionPayment").value =
-    "";
-
-
-  document.getElementById("sessionPaymentMethod").value =
-    "نقدي";
-
-
-  document.getElementById("upperProcedure").value =
-    "";
-
-  document.getElementById("lowerProcedure").value =
-    "";
-
-
-  const jaw = p.ortho?.jaw || "الفك العلوي";
-
-
-  document.getElementById("sJawUpper").checked =
-    jaw === "الفك العلوي";
-
-  document.getElementById("sJawLower").checked =
-    jaw === "الفك السفلي";
-
-  document.getElementById("sJawBoth").checked =
-    jaw === "الفكان";
-
-
-  document.getElementById("sessionNextDate").value =
-    addOneMonth(date);
-
-
-  document.getElementById("sessionNextTime").value =
-    p.nextAppointment?.time || "17:00";
-
-
-  updateProcedureFields();
-
-  openModal("sessionModal");
-}
-
-
-function updateProcedureFields(){
-
-  const jaw = document.querySelector(
-    'input[name="sJaw"]:checked'
-  )?.value;
-
-
-  const upper =
-    document.getElementById("upperProcedureBox");
-
-  const lower =
-    document.getElementById("lowerProcedureBox");
-
-
-  upper.classList.add("hidden");
-  lower.classList.add("hidden");
-
-
-  if(jaw === "الفك العلوي"){
-
-    upper.classList.remove("hidden");
-
-  }
-
-  else if(jaw === "الفك السفلي"){
-
-    lower.classList.remove("hidden");
-
-  }
-
-  else if(jaw === "الفكان"){
-
-    upper.classList.remove("hidden");
-    lower.classList.remove("hidden");
-
-  }
+ }
 
 }
 
 
-function updateSessionNextDate(){
+function saveSession(e){
 
-  const date =
-    document.getElementById("sessionDate").value;
+ e.preventDefault();
 
+ const id=$("sPatientId").value;
 
-  if(!date) return;
+ const p=db.patients.find(x=>x.id===id);
 
+ if(!p)return;
 
-  document.getElementById("sessionNextDate").value =
-    addOneMonth(date);
+ const jaw=$("sJaw").value;
+
+ const num=p.sessions.length+1;
+
+ const session={
+
+  id:uid(),
+
+  number:num,
+
+  date:$("sDate").value,
+
+  time:$("sTime").value,
+
+  jaw,
+
+  upperProcedure:
+   jaw==="الفك السفلي"
+    ?""
+    :($("sUpper")?.value.trim()||""),
+
+  lowerProcedure:
+   jaw==="الفك العلوي"
+    ?""
+    :($("sLower")?.value.trim()||""),
+
+  charge:Number($("sCharge").value||0),
+
+  payment:Number($("sPayment").value||0)
+
+ };
+
+ p.sessions.push(session);
+
+ if(session.payment>0){
+
+  p.payments.push({
+
+   id:uid(),
+
+   amount:session.payment,
+
+   date:session.date,
+
+   time:session.time,
+
+   method:"نقداً",
+
+   type:"جلسة",
+
+   sessionId:session.id
+
+  });
+
+ }
+
+ p.nextAppointment={
+
+  date:
+   $("sNextDate").value||
+   addOneMonth(session.date),
+
+  time:
+   $("sNextTime").value||
+   "17:00",
+
+  sessionNumber:num+1
+
+ };
+
+ saveDB();
+
+ closeModal("sessionModal");
+
+ toast("تم حفظ الجلسة وتحديد الموعد القادم");
+
+ openProfile(id);
+
 }
 
 
-function saveSession(event){
+function openPaymentModal(id){
 
-  event.preventDefault();
+ $("payPatientId").value=id;
 
+ $("payAmount").value="";
 
-  const patientId =
-    document.getElementById("sessionPatientId").value;
+ $("payDate").value=todayISO();
 
+ moneyButtons(
+  "paymentChoices",
+  "payAmount",
+  [50000,25000,15000]
+ );
 
-  const p = getPatient(patientId);
+ openModal("paymentModal");
 
-  if(!p) return;
+}
 
 
-  const number =
-    Number(document.getElementById("sessionNumber").value);
+function savePayment(e){
 
+ e.preventDefault();
 
-  const date =
-    document.getElementById("sessionDate").value ||
-    todayISO();
+ const p=db.patients.find(
+  x=>x.id===$("payPatientId").value
+ );
 
+ if(!p)return;
 
-  const time =
-    document.getElementById("sessionTime").value;
+ const amount=Number(
+  $("payAmount").value||0
+ );
 
+ if(amount<=0)return;
 
-  const jaw =
-    document.querySelector(
-      'input[name="sJaw"]:checked'
-    )?.value || p.ortho?.jaw || "الفك العلوي";
+ p.payments.push({
 
+  id:uid(),
 
-  const upper =
-    document.getElementById("upperProcedure").value.trim();
+  amount,
 
+  date:$("payDate").value,
 
-  const lower =
-    document.getElementById("lowerProcedure").value.trim();
+  time:dateTimeNow().time,
 
+  method:$("payMethod").value,
 
-  const charge =
-    Number(document.getElementById("sessionCharge").value || 0);
+  type:"دفعة"
 
+ });
 
-  const payment =
-    Number(document.getElementById("sessionPayment").value || 0);
+ saveDB();
 
+ closeModal("paymentModal");
 
-  const paymentMethod =
-    document.getElementById("sessionPaymentMethod").value;
+ toast("تمت إضافة الدفعة");
 
+ renderAll();
 
-  const nextDate =
-    document.getElementById("sessionNextDate").value ||
-    addOneMonth(date);
+}
 
 
-  const nextTime =
-    document.getElementById("sessionNextTime").value ||
-    "17:00";
+function openAppointmentModal(id){
 
+ const p=db.patients.find(x=>x.id===id);
 
-  /*
-    إذا اختار الفك العلوي يجب أن نكتب الإجراء للعلوي.
-  */
+ if(!p)return;
 
-  if(jaw === "الفك العلوي" && !upper){
+ $("aPatientId").value=id;
 
-    showToast("اكتب الإجراء الذي تم في الفك العلوي.");
+ $("aDate").value=
+  p.nextAppointment?.date||
+  addOneMonth(todayISO());
 
-    return;
-  }
+ $("aTime").value=
+  p.nextAppointment?.time||
+  "17:00";
 
+ openModal("appointmentModal");
 
-  if(jaw === "الفك السفلي" && !lower){
+}
 
-    showToast("اكتب الإجراء الذي تم في الفك السفلي.");
 
-    return;
-  }
+function saveAppointment(e){
 
+ e.preventDefault();
 
-  if(jaw === "الفكان" && !upper && !lower){
+ const p=db.patients.find(
+  x=>x.id===$("aPatientId").value
+ );
 
-    showToast("اكتب الإجراء للعلوي أو السفلي على الأقل.");
+ if(!p)return;
 
-    return;
-  }
+ p.nextAppointment={
 
+  date:$("aDate").value,
 
-  const session = {
+  time:$("aTime").value,
 
-    id:uid("ses"),
+  sessionNumber:p.sessions.length+1
 
-    number:number,
+ };
 
-    date:date,
+ saveDB();
 
-    time:time,
+ closeModal("appointmentModal");
 
-    jaw:jaw,
+ toast("تم تعديل الموعد");
 
-    upperProcedure:upper,
+ renderAll();
 
-    lowerProcedure:lower,
+}
 
-    charge:charge,
 
-    payment:payment
+function normalizePhone(phone){
 
-  };
+ let s=String(phone||"")
+  .replace(/\D/g,"");
 
+ if(s.startsWith("00"))
+  s=s.slice(2);
 
-  if(!Array.isArray(p.sessions)){
-    p.sessions = [];
-  }
+ if(s.startsWith("0"))
+  s="964"+s.slice(1);
 
+ if(!s.startsWith("964"))
+  s="964"+s;
 
-  p.sessions.push(session);
+ return s;
 
+}
 
-  /*
-    إضافة الدفعة إذا موجودة.
-  */
 
-  if(payment > 0){
+function whatsapp(p){
 
-    if(!Array.isArray(p.payments)){
-      p.payments = [];
-    }
+ if(!p.phone){
 
-    p.payments.push({
+  toast("لا يوجد رقم هاتف لهذا المراجع");
 
-      id:uid("pay"),
+  return;
+ }
 
-      amount:payment,
+ const a=p.nextAppointment||{};
 
-      date:date,
+ if(!a.date){
 
-      time:time,
+  toast("لا يوجد موعد");
 
-      method:paymentMethod,
+  return;
+ }
 
-      type:"دفعة جلسة " + number,
+ const msg=
+ `السلام عليكم ${p.name} 🌷
+نود تذكيركم بأن لديكم موعداً في عيادة دكتور أمير حجي لتقويم الأسنان.
+📅 ${fmtDate(a.date)}
+🕐 ${a.time||"—"}
+نتمنى حضوركم في الموعد المحدد.
+عيادة دكتور أمير حجي 🦷`;
 
-      sessionId:session.id
+ window.open(
+  "https://wa.me/"+
+  normalizePhone(p.phone)+
+  "?text="+
+  encodeURIComponent(msg),
+  "_blank"
+ );
 
-    });
+}
 
-  }
 
+function isTomorrow(s){
 
-  /*
-    الموعد القادم يصبح بعد شهر من تاريخ الجلسة.
-    ويتم تحديث الموعد القديم بدل إنشاء مواعيد متراكمة.
-  */
+ const d=new Date();
 
-  p.nextAppointment = {
+ d.setDate(d.getDate()+1);
 
-    date:nextDate,
+ return s===d.toISOString().slice(0,10);
 
-    time:nextTime,
+}
 
-    sessionNumber:number + 1
 
-  };
+function initials(name){
 
+ return(
+  String(name||"م")
+   .trim()
+   .split(/\s+/)
+   .slice(0,2)
+   .map(x=>x[0])
+   .join("")||
+  "م"
+ ).toUpperCase();
 
-  saveDB();
+}
 
-  closeModal("sessionModal");
 
-  showToast(
-    "تم حفظ الجلسة. الموعد القادم بعد شهر."
+function patientRow(p){
+
+ const a=p.nextAppointment;
+
+ return `
+
+ <div class="patient-item">
+
+  <div class="avatar">
+   ${esc(initials(p.name))}
+  </div>
+
+  <div class="patient-info">
+
+   <b>${esc(p.name)}</b>
+
+   <small>
+    ملف #${esc(p.file)}
+    •
+    ${esc(p.phone||"بدون هاتف")}
+   </small>
+
+   <br>
+
+   <span class="badge">
+    ${esc(p.gender||"—")}
+   </span>
+
+   <span class="badge green">
+    ${esc(
+     a?.date
+      ?fmtShort(a.date)
+      :"لا يوجد موعد"
+    )}
+   </span>
+
+  </div>
+
+  <div class="row">
+
+   <button
+    class="btn blue"
+    onclick="go('profile','${p.id}')"
+   >
+    فتح
+   </button>
+
+  </div>
+
+ </div>
+
+ `;
+
+}
+
+
+function renderPatients(){
+
+ const q=norm(
+  $("searchInput")?.value||""
+ );
+
+ const arr=db.patients.filter(
+  p=>
+   !q||
+   norm(p.name).includes(q)||
+   String(p.file).includes(q)||
+   String(p.phone).includes(q)
+ );
+
+ $("patientsList").innerHTML=
+  arr.length
+   ?arr.map(patientRow).join("")
+   :`<div class="empty">
+      لا يوجد مراجعين مطابقين للبحث.
+     </div>`;
+
+}
+
+
+function appointmentRow(p){
+
+ const a=p.nextAppointment||{};
+
+ return `
+
+ <div class="patient-item">
+
+  <div class="avatar">🦷</div>
+
+  <div class="patient-info">
+
+   <b>${esc(p.name)}</b>
+
+   <small>
+    ملف #${esc(p.file)}
+    • الجلسة ${p.sessions.length+1}
+   </small>
+
+   <br>
+
+   <span class="badge gold">
+    ${esc(a.time||"—")}
+   </span>
+
+  </div>
+
+  <div class="row">
+
+   <button
+    class="btn ghost"
+    onclick="openAppointmentModal('${p.id}')"
+   >
+    تعديل
+   </button>
+
+   <button
+    class="btn primary"
+    onclick="whatsapp(db.patients.find(x=>x.id==='${p.id}'))"
+   >
+    WhatsApp
+   </button>
+
+  </div>
+
+ </div>
+
+ `;
+
+}
+
+
+function renderAppointments(){
+
+ const date=
+  $("apptDate").value||
+  todayISO();
+
+ const arr=db.patients
+  .filter(
+   p=>p.nextAppointment?.date===date
+  )
+  .sort(
+   (a,b)=>
+    (a.nextAppointment.time||"")
+    .localeCompare(
+     b.nextAppointment.time||""
+    )
   );
 
+ $("apptCount").textContent=
+  arr.length+" موعد";
 
-  openPatient(p.id);
+ $("appointmentsList").innerHTML=
+  arr.length
+   ?arr.map(appointmentRow).join("")
+   :`<div class="empty">
+      لا توجد مواعيد في هذا اليوم.
+     </div>`;
 
-  renderAll();
 }
 
 
-/* =========================================================
-   PAYMENT
-========================================================= */
+function setTodayAppt(){
 
-function openPayment(patientId){
+ $("apptDate").value=todayISO();
 
-  const p = getPatient(patientId);
+ renderAppointments();
 
-  if(!p) return;
-
-
-  document.getElementById("paymentPatientId").value =
-    patientId;
-
-
-  document.getElementById("paymentAmount").value =
-    "";
-
-
-  document.getElementById("paymentMethod").value =
-    "نقدي";
-
-
-  document.getElementById("paymentDate").value =
-    todayISO();
-
-
-  document.getElementById("paymentTime").value =
-    timeNow();
-
-
-  openModal("paymentModal");
 }
 
 
-function savePayment(event){
+function totalPaid(p){
 
-  event.preventDefault();
+ return p.payments.reduce(
+  (s,x)=>
+   s+Number(x.amount||0),
+  0
+ );
 
-
-  const patientId =
-    document.getElementById("paymentPatientId").value;
-
-
-  const p = getPatient(patientId);
-
-  if(!p) return;
-
-
-  const amount =
-    Number(document.getElementById("paymentAmount").value || 0);
-
-
-  if(amount <= 0){
-
-    showToast("أدخل مبلغ الدفعة.");
-
-    return;
-  }
-
-
-  const payment = {
-
-    id:uid("pay"),
-
-    amount:amount,
-
-    date:
-      document.getElementById("paymentDate").value ||
-      todayISO(),
-
-    time:
-      document.getElementById("paymentTime").value,
-
-    method:
-      document.getElementById("paymentMethod").value,
-
-    type:"دفعة"
-
-  };
-
-
-  if(!Array.isArray(p.payments)){
-    p.payments = [];
-  }
-
-
-  p.payments.push(payment);
-
-  saveDB();
-
-  closeModal("paymentModal");
-
-  showToast("تم تسجيل الدفعة.");
-
-  openPatient(p.id);
-
-  renderAll();
 }
 
 
-/* =========================================================
-   APPOINTMENT
-========================================================= */
+function remaining(p){
 
-function openAppointment(patientId){
+ return Math.max(
+  0,
+  Number(p.ortho.total||0)-
+  totalPaid(p)
+ );
 
-  const p = getPatient(patientId);
-
-  if(!p) return;
-
-
-  document.getElementById("appointmentPatientId").value =
-    patientId;
-
-
-  document.getElementById("appointmentDate").value =
-    p.nextAppointment?.date ||
-    addOneMonth(todayISO());
-
-
-  document.getElementById("appointmentTime").value =
-    p.nextAppointment?.time ||
-    "17:00";
-
-
-  openModal("appointmentModal");
 }
 
 
-function saveAppointment(event){
+function renderAccounts(){
 
-  event.preventDefault();
+ $("accountsList").innerHTML=
+  db.patients.length
 
+   ?db.patients.map(p=>`
 
-  const patientId =
-    document.getElementById("appointmentPatientId").value;
+    <div class="account-card a1">
 
+     <div class="row between">
 
-  const p = getPatient(patientId);
+      <div>
 
-  if(!p) return;
+       <b>${esc(p.name)}</b>
 
+       <br>
 
-  const date =
-    document.getElementById("appointmentDate").value;
+       <small>
+        ملف #${esc(p.file)}
+       </small>
 
+      </div>
 
-  const time =
-    document.getElementById("appointmentTime").value;
+      <button
+       class="btn"
+       style="background:#fff;color:#0f766e"
+       onclick="openPaymentModal('${p.id}')"
+      >
+       ＋ دفعة
+      </button>
 
+     </div>
 
-  if(!date){
+     <div
+      class="three"
+      style="margin-top:14px"
+     >
 
-    showToast("اختر تاريخ الموعد.");
+      <div>
+       <small>الكلي</small>
+       <div class="big">
+        ${money(p.ortho.total)}
+       </div>
+      </div>
 
-    return;
-  }
+      <div>
+       <small>المدفوع</small>
+       <div class="big">
+        ${money(totalPaid(p))}
+       </div>
+      </div>
 
+      <div>
+       <small>المتبقي</small>
+       <div class="big">
+        ${money(remaining(p))}
+       </div>
+      </div>
 
-  p.nextAppointment = {
+     </div>
 
-    date:date,
+    </div>
 
-    time:time,
+   `).join("")
 
-    sessionNumber:
-      (p.sessions?.length || 0) + 1
+   :`<div class="card empty">
+      لا توجد حسابات.
+     </div>`;
 
-  };
-
-
-  saveDB();
-
-  closeModal("appointmentModal");
-
-  showToast("تم تغيير الموعد.");
-
-  renderAll();
-
-  if(currentPatientId === p.id){
-    renderProfile();
-  }
 }
 
 
-/* =========================================================
-   DELETE
-========================================================= */
+function renderDashboard(){
+
+ const today=todayISO();
+
+ $("todayText").textContent=
+  new Date().toLocaleDateString(
+   "ar-IQ",
+   {
+    weekday:"long",
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+   }
+  );
+
+ $("statPatients").textContent=
+  db.patients.length;
+
+ const todayPatients=
+  db.patients.filter(
+   p=>p.nextAppointment?.date===today
+  );
+
+ $("statToday").textContent=
+  todayPatients.length;
+
+ let income=0;
+
+ db.patients.forEach(p=>{
+
+  p.payments.forEach(x=>{
+
+   if(x.date===today)
+    income+=Number(x.amount||0);
+
+  });
+
+ });
+
+ $("statIncome").textContent=
+  money(income);
+
+ $("statRemaining").textContent=
+  money(
+   db.patients.reduce(
+    (s,p)=>s+remaining(p),
+    0
+   )
+  );
+
+ $("todayList").innerHTML=
+  todayPatients.length
+   ?todayPatients.map(appointmentRow).join("")
+   :`<div class="empty">
+      لا توجد مراجعات اليوم.
+     </div>`;
+
+ const tom=
+  db.patients.filter(
+   p=>isTomorrow(
+    p.nextAppointment?.date
+   )
+  );
+
+ $("tomorrowList").innerHTML=
+  tom.length
+   ?tom.map(appointmentRow).join("")
+   :`<div class="empty">
+      لا توجد مواعيد باچر.
+     </div>`;
+
+}
+
+
+function openProfile(id){
+
+ currentPatientId=id;
+
+ const p=db.patients.find(
+  x=>x.id===id
+ );
+
+ if(!p)return;
+
+ const sessions=[
+  ...p.sessions
+ ].reverse();
+
+ $("profileContent").innerHTML=`
+
+ <div class="card">
+
+  <div class="profile-head">
+
+   <div class="avatar">
+    ${esc(initials(p.name))}
+   </div>
+
+   <div style="flex:1">
+
+    <h2 style="margin:0">
+     ${esc(p.name)}
+    </h2>
+
+    <div style="color:#718096">
+     ملف #${esc(p.file)}
+     •
+     ${esc(p.phone||"لا يوجد هاتف")}
+    </div>
+
+   </div>
+
+   <button
+    class="btn primary"
+    onclick="openSessionModal('${p.id}')"
+   >
+    ＋ جلسة
+   </button>
+
+  </div>
+
+  <div class="profile-grid">
+
+   <div class="info-box">
+    <small>الجنس</small>
+    <b>${esc(p.gender||"—")}</b>
+   </div>
+
+   <div class="info-box">
+    <small>العمر</small>
+    <b>${esc(p.age||"—")}</b>
+   </div>
+
+   <div class="info-box">
+    <small>الفك</small>
+    <b>${esc(p.ortho.jaw||"—")}</b>
+   </div>
+
+   <div class="info-box">
+    <small>الجهاز</small>
+    <b>${esc(p.ortho.appliance||"—")}</b>
+   </div>
+
+   <div class="info-box">
+    <small>تاريخ البدء</small>
+    <b>${fmtShort(p.ortho.startDate)}</b>
+   </div>
+
+   <div class="info-box">
+    <small>عدد الجلسات</small>
+    <b>${p.sessions.length}</b>
+   </div>
+
+   <div class="info-box">
+    <small>الموعد القادم</small>
+    <b>
+     ${
+      p.nextAppointment?.date
+       ?fmtShort(p.nextAppointment.date)
+       :"—"
+     }
+    </b>
+   </div>
+
+   <div class="info-box">
+    <small>الحساب المتبقي</small>
+    <b>${money(remaining(p))}</b>
+   </div>
+
+  </div>
+
+  <div class="row" style="margin-top:14px">
+
+   <button
+    class="btn primary"
+    onclick="openSessionModal('${p.id}')"
+   >
+    تسجيل جلسة
+   </button>
+
+   <button
+    class="btn blue"
+    onclick="openPaymentModal('${p.id}')"
+   >
+    إضافة دفعة
+   </button>
+
+   <button
+    class="btn gold"
+    onclick="openAppointmentModal('${p.id}')"
+   >
+    تعديل الموعد
+   </button>
+
+   <button
+    class="btn"
+    style="background:#25d366;color:#fff"
+    onclick="whatsapp(db.patients.find(x=>x.id==='${p.id}'))"
+   >
+    WhatsApp
+   </button>
+
+   <button
+    class="btn ghost"
+    onclick="printProfile('${p.id}')"
+   >
+    🖨️ طباعة
+   </button>
+
+   <button
+    class="btn danger"
+    onclick="deletePatient('${p.id}')"
+   >
+    حذف الملف
+   </button>
+
+  </div>
+
+ </div>
+
+
+ <div class="section-title">
+
+  <h2>الجلسات</h2>
+
+  <span>
+   ${p.sessions.length} جلسة
+  </span>
+
+ </div>
+
+
+ <div class="card">
+
+ ${
+  sessions.length
+
+   ?sessions.map(s=>`
+
+    <div class="session">
+
+     <div class="session-top">
+
+      <div class="row">
+
+       <div class="session-num">
+        ${s.number}
+       </div>
+
+       <div>
+
+        <b>
+         جلسة رقم ${s.number}
+        </b>
+
+        <br>
+
+        <small>
+         ${fmtDate(s.date)}
+         •
+         ${esc(s.time||"—")}
+        </small>
+
+       </div>
+
+      </div>
+
+      <span class="badge green">
+       ${esc(s.jaw)}
+      </span>
+
+     </div>
+
+     ${
+      s.upperProcedure
+       ?`
+        <div class="procedure">
+         <b>الفك العلوي</b>
+         <p>
+          ${esc(s.upperProcedure)}
+         </p>
+        </div>
+       `
+       :""
+     }
+
+     ${
+      s.lowerProcedure
+       ?`
+        <div class="procedure">
+         <b>الفك السفلي</b>
+         <p>
+          ${esc(s.lowerProcedure)}
+         </p>
+        </div>
+       `
+       :""
+     }
+
+     <div
+      class="row between"
+      style="margin-top:11px;font-size:12px"
+     >
+
+      <span>
+       الأجرة:
+       <b>${money(s.charge)}</b>
+      </span>
+
+      <span>
+       المدفوع:
+       <b>${money(s.payment)}</b>
+      </span>
+
+     </div>
+
+    </div>
+
+   `).join("")
+
+   :`
+    <div class="empty">
+     لم يتم تسجيل أي جلسة بعد.
+    </div>
+   `
+ }
+
+ </div>
+
+
+ <div class="section-title">
+  <h2>الحساب</h2>
+ </div>
+
+
+ <div class="card">
+
+  <div class="three">
+
+   <div class="info-box">
+    <small>المبلغ الكلي</small>
+    <b>${money(p.ortho.total)}</b>
+   </div>
+
+   <div class="info-box">
+    <small>المدفوع</small>
+    <b>${money(totalPaid(p))}</b>
+   </div>
+
+   <div class="info-box">
+    <small>المتبقي</small>
+    <b>${money(remaining(p))}</b>
+   </div>
+
+  </div>
+
+  <div class="section-title">
+   <h2 style="font-size:16px">
+    سجل الدفعات
+   </h2>
+  </div>
+
+  <div class="table-wrap">
+
+   <table class="table">
+
+    <thead>
+     <tr>
+      <th>التاريخ</th>
+      <th>المبلغ</th>
+      <th>الطريقة</th>
+      <th>النوع</th>
+     </tr>
+    </thead>
+
+    <tbody>
+
+     ${
+      p.payments.length
+
+       ?[...p.payments]
+        .reverse()
+        .map(x=>`
+
+         <tr>
+
+          <td>
+           ${fmtShort(x.date)}
+           ${esc(x.time||"")}
+          </td>
+
+          <td>
+           ${money(x.amount)}
+          </td>
+
+          <td>
+           ${esc(x.method)}
+          </td>
+
+          <td>
+           ${esc(x.type)}
+          </td>
+
+         </tr>
+
+        `).join("")
+
+       :`
+        <tr>
+         <td colspan="4">
+          لا توجد دفعات.
+         </td>
+        </tr>
+       `
+     }
+
+    </tbody>
+
+   </table>
+
+  </div>
+
+ </div>
+
+ `;
+
+}
+
 
 function deletePatient(id){
 
-  const p = getPatient(id);
+ const p=db.patients.find(
+  x=>x.id===id
+ );
 
-  if(!p) return;
+ if(!p)return;
 
+ if(
+  !confirm(
+   `حذف ملف ${p.name} وجميع جلساته ودفعاته؟`
+  )
+ )
+  return;
 
-  const ok = confirm(
-    `هل أنت متأكد من حذف ملف "${p.name}"؟\n\nسيتم حذف الجلسات والدفعات والموعد أيضاً.`
+ db.patients=
+  db.patients.filter(
+   x=>x.id!==id
   );
 
+ saveDB();
 
-  if(!ok) return;
+ toast("تم حذف الملف");
 
+ go("patients");
 
-  db.patients =
-    db.patients.filter(x=>x.id !== id);
-
-
-  saveDB();
-
-  currentPatientId = null;
-
-  showToast("تم حذف الملف.");
-
-  showPage("patients");
-
-  renderAll();
 }
 
 
-/* =========================================================
-   PHONE
-========================================================= */
+function printProfile(id){
 
-function callPatient(phone){
+ const p=db.patients.find(
+  x=>x.id===id
+ );
 
-  const clean =
-    String(phone || "").replace(/\s+/g,"");
+ if(!p)return;
 
-  if(!clean) return;
+ openProfile(id);
 
-  window.location.href =
-    "tel:" + clean;
+ setTimeout(()=>{
+  window.print()
+ },200);
+
 }
 
 
-/* =========================================================
-   PRINT
-========================================================= */
+function backup(){
 
-function printPatient(id){
+ const blob=new Blob(
+  [JSON.stringify(db,null,2)],
+  {type:"application/json"}
+ );
 
-  currentPatientId = id;
+ const a=document.createElement("a");
 
-  renderProfile();
+ a.href=URL.createObjectURL(blob);
 
-  setTimeout(()=>{
-    window.print();
-  },150);
+ a.download=
+  "amir-haji-ortho-backup-"+
+  todayISO()+
+  ".json";
+
+ a.click();
+
+ URL.revokeObjectURL(a.href);
+
+ toast("تم إنشاء النسخة الاحتياطية");
+
 }
 
 
-function printCurrentPatient(){
+function restore(e){
 
-  if(!currentPatientId){
+ const f=e.target.files[0];
 
-    showToast("افتح ملف مراجع أولاً.");
+ if(!f)return;
 
+ const r=new FileReader();
+
+ r.onload=()=>{
+
+  try{
+
+   const x=JSON.parse(r.result);
+
+   if(
+    !x||
+    !Array.isArray(x.patients)
+   )
+    throw 0;
+
+   if(
+    !confirm(
+     "سيتم استبدال البيانات الحالية بالنسخة المختارة. متابعة؟"
+    )
+   )
     return;
+
+   db=x;
+
+   saveDB();
+
+   renderAll();
+
+   toast("تمت الاستعادة بنجاح");
+
+  }catch(err){
+
+   toast("الملف غير صالح");
+
   }
 
-  printPatient(currentPatientId);
+ };
+
+ r.readAsText(f);
+
+ e.target.value="";
+
 }
 
-
-/* =========================================================
-   BACKUP
-========================================================= */
-
-function backupData(){
-
-  const data = JSON.stringify(
-    db,
-    null,
-    2
-  );
-
-
-  const blob = new Blob(
-    [data],
-    {type:"application/json"}
-  );
-
-
-  const url =
-    URL.createObjectURL(blob);
-
-
-  const a =
-    document.createElement("a");
-
-
-  a.href = url;
-
-  a.download =
-    "Amir-Haji-Ortho-Backup-" +
-    todayISO() +
-    ".json";
-
-
-  document.body.appendChild(a);
-
-  a.click();
-
-  a.remove();
-
-  URL.revokeObjectURL(url);
-
-  showToast("تم تجهيز النسخة الاحتياطية.");
-}
-
-
-function restoreData(event){
-
-  const file =
-    event.target.files?.[0];
-
-
-  if(!file) return;
-
-
-  const reader =
-    new FileReader();
-
-
-  reader.onload = function(e){
-
-    try{
-
-      const imported =
-        JSON.parse(e.target.result);
-
-
-      if(!imported || !Array.isArray(imported.patients)){
-
-        throw new Error("invalid");
-
-      }
-
-
-      const ok = confirm(
-        "استعادة النسخة ستستبدل البيانات الحالية على هذا الجهاز. هل تريد المتابعة؟"
-      );
-
-
-      if(!ok) return;
-
-
-      db = imported;
-
-      db.version = 4;
-
-      saveDB();
-
-      showToast("تمت استعادة البيانات بنجاح.");
-
-      renderAll();
-
-    }catch(error){
-
-      showToast("ملف النسخة الاحتياطية غير صالح.");
-
-    }
-
-  };
-
-
-  reader.readAsText(file);
-
-  event.target.value = "";
-}
-
-
-/* =========================================================
-   MODALS
-========================================================= */
-
-function openModal(id){
-
-  document.getElementById(id).classList.add("show");
-
-  document.body.style.overflow = "hidden";
-}
-
-
-function closeModal(id){
-
-  document.getElementById(id).classList.remove("show");
-
-  document.body.style.overflow = "";
-}
-
-
-function closeModalOutside(event,id){
-
-  if(event.target.id === id){
-    closeModal(id);
-  }
-}
-
-
-/* =========================================================
-   SYSTEM INFO
-========================================================= */
-
-function showSystemInfo(){
-
-  alert(
-`عيادة دكتور أمير حجي
-
-نظام إدارة مراجعي تقويم الأسنان
-
-النسخة: 4.0
-
-النظام مخصص لإدارة:
-• ملفات المراجعين
-• جلسات التقويم
-• إجراءات الفك العلوي والسفلي
-• المواعيد
-• الحسابات والدفعات
-• النسخ الاحتياطي
-
-«لم يكن هذا النظام مجرد كود… بل تعبٌ وحبٌّ صُمّما ليجعلا عمل عيادتنا أسهل وأجمل.»
-
-تصميم وتطوير • إياد ايزدين`
-  );
-}
-
-
-/* =========================================================
-   RENDER ALL
-========================================================= */
 
 function renderAll(){
 
-  renderDashboard();
-  renderPatients();
-  renderAppointments();
-  renderAccounts();
-
-  if(currentPatientId){
-    renderProfile();
-  }
-}
-
-
-/* =========================================================
-   START
-========================================================= */
-
-function init(){
-
-  loadDB();
-
-  renderAll();
-
-  document.getElementById("todayLabel").textContent =
-    formatDate(todayISO());
+ renderDashboard();
+ renderPatients();
+ renderAppointments();
+ renderAccounts();
 
 }
 
 
-init();
+loadDB();
+
+$("apptDate").value=todayISO();
+
+renderAll();
 
 </script>
 
